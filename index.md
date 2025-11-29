@@ -28,8 +28,8 @@ layout: default
   <p>
     &emsp;&emsp;> My apps:
   <br>
-  <br>&emsp;&emsp;- 健康宝 Health Treasure: <a href="https://onlymanes.ai/health" target="_blank">https://onlymanes.ai/health</a>
-  <br>&emsp;&emsp;- 英语宝 English Treasure: <a href="https://onlymanes.ai/english" target="_blank">https://onlymanes.ai/english</a>
+  <br>&emsp;&emsp;- <a href="https://onlymanes.ai/health" target="_blank">健康宝 Health Treasure</a>
+  <br>&emsp;&emsp;- <a href="https://onlymanes.ai/english" target="_blank">英语宝 English Treasure</a>
   </p>
 </div>
 
