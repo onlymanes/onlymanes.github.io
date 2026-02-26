@@ -24,15 +24,6 @@ layout: default
   </ul>
 </div>
 
-<div class="app-section">
-  <p>
-    &emsp;&emsp;> My apps:
-  <br>
-  <br>&emsp;&emsp;- <a href="https://onlymanes.ai/health" target="_blank">健康宝 Health Treasure</a>
-  <br>&emsp;&emsp;- <a href="https://onlymanes.ai/english" target="_blank">英语宝 English Treasure</a>
-  </p>
-</div>
-
 <div class="visitor-counter">
   Total Visitors: <span id="visitorCount">Loading...</span>
 </div>
