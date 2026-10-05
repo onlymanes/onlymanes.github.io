@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>onlymanes Blog</title>
+    <title>{% if page.title %}{{ page.title }} | {% endif %}onlymanes Blog</title>
 
     <link rel="stylesheet" href="/assets/css/extra.css">
     <link rel="icon" href="/assets/img/onlymanes.png" type="image/png">
@@ -77,6 +77,22 @@
         }
 
         @media (max-width: 767px) {}
+
+        .post-nav-top { margin-bottom: 1.2rem; font-size: 0.95rem; }
+        .post-nav-bottom {
+            margin-top: 2.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0, 170, 255, 0.25);
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            font-size: 0.95rem;
+        }
+        .post-nav-bottom a { max-width: 48%; }
+        .post-nav-bottom .next { margin-left: auto; text-align: right; }
+
+        .post-date { opacity: 0.65; font-size: 0.85em; margin-right: 0.6em; white-space: nowrap; }
+        .post-desc { opacity: 0.65; font-size: 0.9em; margin-left: 0.6em; }
     </style>
 </head>
 
@@ -84,7 +100,22 @@
     <div class="content-container">
         <div class="main-layout">
             <div class="text-section">
+                {% if page.date %}
+                <nav class="post-nav-top">
+                    <a href="/">&larr; 返回主页</a>
+                </nav>
+                {% endif %}
                 {{ content }}
+                {% if page.date %}
+                <nav class="post-nav-bottom">
+                    {% if page.previous %}
+                    <a href="{{ page.previous.url }}">&larr; {{ page.previous.title }}</a>
+                    {% endif %}
+                    {% if page.next %}
+                    <a class="next" href="{{ page.next.url }}">{{ page.next.title }} &rarr;</a>
+                    {% endif %}
+                </nav>
+                {% endif %}
             </div>
 
             <div class="cover-wrapper">
