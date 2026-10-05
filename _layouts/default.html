@@ -93,10 +93,48 @@
 
         .post-date { opacity: 0.65; font-size: 0.85em; margin-right: 0.6em; white-space: nowrap; }
         .post-desc { opacity: 0.65; font-size: 0.9em; margin-left: 0.6em; }
+
+        /* ===== 文章正文排版优化(仅文章页) ===== */
+        .is-post .text-section { overflow-wrap: break-word; }
+        .is-post .text-section p { line-height: 1.9; margin: 0 0 1.1em; text-align: justify; }
+        /* 首段为标题行,次段为时间戳行(老文章无 front matter,正文即标题+时间戳开头) */
+        .is-post .text-section > p:first-of-type {
+            font-size: 1.5em; font-weight: 700; line-height: 1.4;
+            margin-bottom: 0.25em; text-align: left;
+        }
+        .is-post .text-section > p:nth-of-type(2) {
+            opacity: 0.55; font-size: 0.85em; margin-bottom: 2em; text-align: left;
+        }
+        .is-post .text-section h1, .is-post .text-section h2,
+        .is-post .text-section h3, .is-post .text-section h4 {
+            line-height: 1.5; margin: 1.6em 0 0.8em;
+        }
+        /* 图片:自适应缩放、圆角、居中、阴影 */
+        .is-post .text-section img {
+            max-width: 100%; height: auto; display: block;
+            margin: 1.2rem auto; border-radius: 12px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+        }
+        /* 视频:圆角 */
+        .is-post .text-section video {
+            max-width: 100%; border-radius: 12px; display: block; margin: 1.2rem auto;
+        }
+        /* 音频:限宽播放条 */
+        .is-post .text-section audio {
+            width: 100%; max-width: 420px; display: block; margin: 1.2rem 0;
+        }
+        /* 灯箱:点击图片全屏查看 */
+        .lightbox {
+            position: fixed; inset: 0; z-index: 1000;
+            background: rgba(0, 0, 0, 0.92);
+            display: flex; align-items: center; justify-content: center;
+            cursor: zoom-out;
+        }
+        .lightbox img { max-width: 94vw; max-height: 94vh; border-radius: 8px; }
     </style>
 </head>
 
-<body>
+<body{% if page.date %} class="is-post"{% endif %}>
     <div class="content-container">
         <div class="main-layout">
             <div class="text-section">
@@ -143,6 +181,40 @@
             });
         })();
     </script>
+
+    {% if page.date %}
+    <script>
+        // 文章页图片:懒加载 + 点击灯箱放大
+        (function () {
+            function enableLightbox(img) {
+                img.addEventListener('click', function () {
+                    var lb = document.createElement('div');
+                    lb.className = 'lightbox';
+                    var full = document.createElement('img');
+                    full.src = img.src;
+                    full.alt = img.alt || '';
+                    lb.appendChild(full);
+                    lb.addEventListener('click', function () { lb.remove(); });
+                    document.addEventListener('keydown', function esc(e) {
+                        if (e.key === 'Escape') {
+                            lb.remove();
+                            document.removeEventListener('keydown', esc);
+                        }
+                    });
+                    document.body.appendChild(lb);
+                });
+            }
+            document.addEventListener('DOMContentLoaded', function () {
+                document.querySelectorAll('.text-section img').forEach(function (img) {
+                    img.loading = 'lazy';
+                    img.decoding = 'async';
+                    img.style.cursor = 'zoom-in';
+                    enableLightbox(img);
+                });
+            });
+        })();
+    </script>
+    {% endif %}
 </body>
 
 </html>
