@@ -7,7 +7,7 @@
     <title>{% if page.title %}{{ page.title }} | {% endif %}onlymanes Blog</title>
 
     <link rel="stylesheet" href="/assets/css/extra.css">
-    <link rel="icon" href="/assets/img/onlymanes.png" type="image/png">
+    <link rel="icon" href="/assets/img/icons/onlymanes.png" type="image/png">
 
     <style>
         .content-container {
@@ -131,7 +131,7 @@
         (function () {
             const TOTAL_IMAGES = 30;
             const randomIndex = Math.floor(Math.random() * TOTAL_IMAGES) + 1;
-            const imgUrl = `/assets/img/${randomIndex}.jpg`;
+            const imgUrl = `/assets/img/cover/${randomIndex}.jpg`;
 
             document.addEventListener('DOMContentLoaded', function () {
                 document.querySelectorAll('.cover-image').forEach(function (el) {
