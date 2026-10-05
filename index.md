@@ -18,9 +18,20 @@ layout: default
   <ul class="post-list">
     {% for post in site.posts %}
       <li class="post-item">
+        <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
         <a href="{{ post.url }}" class="post-link">{{ post.title }}</a>
       </li>
     {% endfor %}
+  </ul>
+</div>
+
+<div class="tools-section">
+  <p><br>&emsp;&emsp;> Tools:</p>
+  <ul class="post-list">
+    <li class="post-item">
+      <a href="https://onlymanes.ai/pt-levels/" class="post-link">AI 量化支撑压力位</a>
+      <span class="post-desc">每日更新的标的支撑位 / 压力位</span>
+    </li>
   </ul>
 </div>
 
