@@ -308,6 +308,8 @@
         <a class="btn" id="paypalBtn" href="#" target="_blank" rel="noopener" data-en="❀ Send a little flower (PayPal · 1 CAD)">❀ 送一朵小花（PayPal · 1 加元）</a>
         <button class="btn ghost" id="etransferBtn" data-en="e-transfer works too">e-transfer 也可以</button>
         <p class="note" id="etransferNote" style="display:none;" data-en-html="Send 1 CAD by e-transfer to <b>onlymanes@gmail.com</b> with the note “Ziwei Star flower”, then click “I’ve sent a flower” below.">用 e-transfer 汇 1 加元到 <b>onlymanes@gmail.com</b>，备注「紫微星小花」，然后点下面的“我已送花”。</p>
+        <button class="btn ghost" id="alipayBtn" data-en="Alipay works too (for users in China)">支付宝也可以（中国用户）</button>
+        <p class="note" id="alipayNote" style="display:none;" data-en-html="Send 1 CNY by Alipay to <b>onlymanes@hotmail.com</b> with the note “Ziwei Star flower”, then click “I’ve sent a flower” below.">用支付宝转账 1 元到 <b>onlymanes@hotmail.com</b>，备注「紫微星小花」，然后点下面的“我已送花”。</p>
         <p><button class="btn ghost" id="giftDoneBtn" data-en="I’ve sent a flower">我已送花</button></p>
       </div>
       <div id="flowerAfter" class="hidden">
@@ -986,6 +988,10 @@ function setupFlower() {
   $('paypalBtn').onclick = () => { localStorage.setItem('ziwei_gift_token', token); };
   $('etransferBtn').onclick = () => {
     const n = $('etransferNote');
+    n.style.display = n.style.display === 'none' ? 'block' : 'none';
+  };
+  $('alipayBtn').onclick = () => {
+    const n = $('alipayNote');
     n.style.display = n.style.display === 'none' ? 'block' : 'none';
   };
   $('giftDoneBtn').onclick = () => recordGift(token, 'manual');
