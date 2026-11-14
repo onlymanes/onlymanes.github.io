@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>紫微星测试 · 结果</title>
+<style>
+  :root {
+    --ink:#f2eefc; --muted:#b9b0d8; --faint:#8d84ad;
+    --card:rgba(20,14,48,.78); --card-line:rgba(180,160,255,.28);
+    --gold:#e8c96a; --pink:#f6a8c0; --accent:#9d7bff;
+  }
+  * { box-sizing:border-box; }
+  html,body { margin:0; padding:0; }
+  body {
+    color:var(--ink); min-height:100vh;
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    background:#0b0722;
+    background-image:linear-gradient(180deg,#0b0722 0%,#1a0f3d 45%,#241243 70%,#12081f 100%);
+  }
+  .bg {
+    position:fixed; inset:0; z-index:0;
+    background:url('ziwei-star.webp') center 18% / cover no-repeat;
+    opacity:.92;
+  }
+  .bg::after {
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(11,7,34,.55) 0%, rgba(11,7,34,.25) 30%, rgba(11,7,34,.62) 62%, rgba(11,7,34,.94) 100%);
+  }
+  #sparks { position:fixed; inset:0; z-index:1; pointer-events:none; overflow:hidden; }
+  .spark { position:absolute; border-radius:50%; background:#fff;
+    animation:twinkle var(--d,3s) ease-in-out infinite; opacity:.2; }
+  @keyframes twinkle { 0%,100% { opacity:.12; transform:scale(.7);} 50% { opacity:.95; transform:scale(1.15);} }
+  .petal { position:fixed; top:-40px; z-index:1; pointer-events:none; color:var(--pink);
+    animation:fall linear infinite; opacity:.75; }
+  @keyframes fall {
+    0% { transform:translateY(-40px) rotate(0deg); opacity:0; }
+    8% { opacity:.8; }
+    100% { transform:translateY(105vh) rotate(320deg); opacity:.15; }
+  }
+  .wrap { position:relative; z-index:2; max-width:760px; margin:0 auto; padding:140px 16px 80px; } /* 标题下移：不盖住背景人像头部/徽标顶部花（2026-11-14 试用反馈） */
+  header { text-align:center; margin:18px 0 8px; }
+  .header-star { width:54px; height:54px; display:block; margin:0 auto 8px;
+    filter:drop-shadow(0 0 10px rgba(232,201,106,.5)); }
+  header h1 { font-size:27px; line-height:1.35; margin:0 0 6px; letter-spacing:2px;
+    text-shadow:0 2px 18px rgba(0,0,0,.7); }
+  header .en { color:var(--gold); font-size:14px; letter-spacing:.4px; }
+  header .tag { color:var(--muted); font-size:13px; margin-top:8px; font-style:italic; }
+  .disclaimer {
+    margin:20px auto 6px; padding:14px 16px; border:1.5px solid var(--gold);
+    border-radius:12px; background:rgba(20,12,40,.82);
+    font-size:14.5px; line-height:1.75; text-align:left;
+  }
+  .disclaimer b { color:var(--gold); }
+  .disclaimer .en { font-size:13px; color:var(--muted); margin-top:6px; }
+  .intro { margin:16px 0 4px; font-size:14.5px; line-height:1.85; }
+  .intro h2 { font-size:16px; color:var(--gold); margin:0 0 6px; letter-spacing:1px; }
+  .intro p { margin:0; }
+  .card {
+    background:var(--card); border:1px solid var(--card-line); border-radius:16px;
+    padding:20px; margin:18px 0; backdrop-filter:blur(6px);
+  }
+  .card h2 { font-size:18px; margin:0 0 4px; color:var(--gold); letter-spacing:1px; }
+  .card h3 { font-size:15.5px; margin:18px 0 6px; color:#d9cfff; }
+  .card p, .card li { font-size:14.5px; line-height:1.8; }
+  .card p.note { color:var(--muted); font-size:13px; }
+  .modes { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:12px 0 4px; }
+  .mode { border:1px solid var(--card-line); border-radius:12px; padding:12px; cursor:pointer;
+    font-size:14px; line-height:1.6; background:rgba(255,255,255,.03); }
+  .mode:hover { border-color:var(--accent); }
+  .mode input { accent-color:var(--accent); margin-right:6px; }
+  .mode.sel { border-color:var(--gold); background:rgba(232,201,106,.08); }
+  label.f { display:block; font-size:14px; margin:16px 0 6px; color:#d9cfff; }
+  label.f small { color:var(--muted); font-weight:normal; }
+  input[type=date], input[type=time], input[type=text], select {
+    width:100%; padding:11px 12px; font-size:15px; color:var(--ink);
+    background:rgba(255,255,255,.07); border:1px solid var(--card-line); border-radius:10px;
+  }
+  /* 下拉选项必须深字浅底：原生弹出菜单是白底，继承的浅色字会看不清（2026-11-13 试用反馈） */
+  select option { color:#241243; background:#ffffff; }
+  input[type=date]::-webkit-calendar-picker-indicator { filter:invert(.8); }
+  .seg { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  .seg label { font-size:14px; color:var(--ink); }
+  .seg input { accent-color:var(--accent); }
+  .row2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .lunar3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
+  @media (max-width:560px){ .modes,.row2{ grid-template-columns:1fr; } header h1{ font-size:22px; } }
+  #submitBtn {
+    width:100%; margin-top:22px; padding:15px; font-size:17px; letter-spacing:4px;
+    border:none; border-radius:12px; cursor:pointer; color:#241243;
+    background:linear-gradient(135deg,#e8c96a,#c9a24a);
+  }
+  #submitBtn:disabled { opacity:.55; cursor:wait; }
+  .status { min-height:20px; font-size:13.5px; color:var(--muted); text-align:center; margin-top:10px; }
+  .chapter { margin:16px 0; }
+  .chapter h3 { color:var(--gold); }
+  .chapter p { white-space:pre-wrap; }
+  .kv { font-size:14px; line-height:1.9; }
+  .kv b { color:var(--gold); font-weight:600; }
+  .audit li { margin:4px 0; }
+  .audit li b { color:var(--gold); }
+  .langtoggle { text-align:right; margin:6px 0 0; }
+  .langtoggle button {
+    background:none; border:1px solid var(--card-line); color:var(--ink);
+    border-radius:8px; padding:6px 12px; font-size:13px; cursor:pointer; margin-left:6px;
+  }
+  .langtoggle button.on { border-color:var(--gold); color:var(--gold); }
+  .flower-big { text-align:center; margin:8px 0 2px; }
+  .flower-big svg { width:130px; height:130px; }
+  .btn {
+    display:inline-block; padding:12px 20px; font-size:15px; border-radius:10px; cursor:pointer;
+    border:1px solid var(--gold); background:rgba(232,201,106,.12); color:var(--gold);
+    text-decoration:none; margin:6px 8px 6px 0;
+  }
+  .btn.ghost { border-color:var(--card-line); background:none; color:var(--ink); }
+  .btn:hover { filter:brightness(1.15); }
+  .music-links a {
+    display:inline-block; margin:6px 8px 6px 0; padding:9px 14px; font-size:14px;
+    border:1px solid var(--card-line); border-radius:20px; color:var(--ink); text-decoration:none;
+  }
+  .music-links a:hover { border-color:var(--gold); color:var(--gold); }
+  blockquote {
+    margin:14px 0 0; padding:12px 16px; border-left:3px solid var(--pink);
+    background:rgba(246,168,192,.06); font-size:14px; line-height:1.9; color:#e8ddf5;
+  }
+  blockquote small { color:var(--muted); }
+  footer { text-align:center; color:var(--faint); font-size:12.5px; margin-top:30px; line-height:1.9; }
+  .hidden { display:none !important; }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="wrap" style="padding-top:40px;">
+
+<div class="card">
+  <h2>今晚的星</h2>
+  <p class="kv">有两颗候选紫微星，50% 掷选定了一颗。今晚为你讲故事的，就是掷到的这一颗——大家叫她阿紫。</p>
+  <h3>梅花易数 · 这一秒的卦</h3>
+  <p class="kv">你点下“开始测算”的那一秒：<b>2026-11-14 8:15:28</b><br>上卦：2026+11+14=2051，2051 mod 8 = 3（离☲）<br>下卦与动爻：2026+11+14+8+15+28=2102，2102 mod 8 = 6（坎☵），2102 mod 6 = 2（动爻）<br>本卦第 <b>63 卦 · 既济</b>（离☲上坎☵下），动爻第 2 爻，变卦第 <b>36 卦 · 明夷</b>。<br>本卦“既济”：既济是已经成了、过河了，讲的是事办成了，但成了之后也要守住。<br>变卦“明夷”：明夷是光明受了伤、藏起来，像太阳落到地下，讲的是亮光被遮住了，先藏一藏。<br><small style="color:var(--muted);">传统梅花易数只用年月日时；这里按本测试的设计，把分和秒也加进了下卦与动爻的数里。</small></p>
+</div>
+
+</div>
+</body></html>
