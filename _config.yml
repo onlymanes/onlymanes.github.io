@@ -1,6 +1,6 @@
 title: onlymanes Blog
 description: Personal blog sharing creative ideas
-baseurl: /
+baseurl: /blog
 url: https://onlymanes.ai
 
 plugins:
