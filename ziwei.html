@@ -24,7 +24,7 @@
 <style>
   :root {
     --ink:#f2eefc; --muted:#b9b0d8; --faint:#8d84ad;
-    --card:rgba(20,14,48,.78); --card-line:rgba(180,160,255,.28);
+    --card:rgba(20,14,48,.9); --card-line:rgba(180,160,255,.28);
     --gold:#e8c96a; --pink:#f6a8c0; --accent:#9d7bff;
   }
   * { box-sizing:border-box; }
@@ -37,7 +37,7 @@
   }
   .bg {
     position:fixed; inset:0; z-index:0;
-    background:url('ziwei-star.webp') center 18% / cover no-repeat;
+    background:url('ziwei-star.webp') 65% 30% / cover no-repeat;
     opacity:.92;
   }
   .bg::after {
@@ -55,9 +55,10 @@
     8% { opacity:.8; }
     100% { transform:translateY(105vh) rotate(320deg); opacity:.15; }
   }
-  .wrap { position:relative; z-index:2; max-width:760px; margin:0 auto; padding:140px 16px 80px; } /* 标题下移：不盖住背景人像头部/徽标顶部花（2026-11-14 试用反馈） */
+  @media (prefers-reduced-motion: reduce) { .petal, .spark { animation: none !important; opacity: 0; } }
+  .wrap { position:relative; z-index:2; max-width:760px; margin:0 auto; padding:160px 16px 80px; } /* 标题下移：不盖住背景人像头部/徽标顶部花（2026-11-14 试用反馈） */
   header { text-align:center; margin:18px 0 8px; }
-  .header-star { width:54px; height:54px; display:block; margin:0 auto 8px;
+  .header-star { width:40px; height:40px; display:block; margin:0 auto 8px;
     filter:drop-shadow(0 0 10px rgba(232,201,106,.5)); }
   header h1 { font-size:27px; line-height:1.35; margin:0 0 6px; letter-spacing:2px;
     text-shadow:0 2px 18px rgba(0,0,0,.7); }
@@ -79,7 +80,7 @@
   }
   .card h2 { font-size:18px; margin:0 0 4px; color:var(--gold); letter-spacing:1px; }
   .card h3 { font-size:15.5px; margin:18px 0 6px; color:#d9cfff; }
-  .card p, .card li { font-size:14.5px; line-height:1.8; }
+  .card p, .card li { font-size:16px; line-height:1.8; }
   .card p.note { color:var(--muted); font-size:13px; }
   .modes { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:12px 0 4px; }
   .mode { border:1px solid var(--card-line); border-radius:12px; padding:12px; cursor:pointer;
@@ -101,6 +102,8 @@
   .seg input { accent-color:var(--accent); }
   .row2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
   .lunar3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
+  @media (max-width:1024px){ .wrap{ max-width:680px; } }
+  @media (max-width:768px){ .wrap{ padding:150px 14px 70px; } header h1{ font-size:24px; } }
   @media (max-width:560px){ .modes,.row2{ grid-template-columns:1fr; } header h1{ font-size:22px; } }
   #submitBtn {
     width:100%; margin-top:22px; padding:15px; font-size:17px; letter-spacing:4px;
@@ -146,6 +149,7 @@
 </style>
 </head>
 <body>
+<noscript><div style="max-width:760px;margin:40px auto;padding:20px;text-align:center;color:#f2eefc;">本页需要启用 JavaScript 才能测算。This page needs JavaScript enabled to run the reading.</div></noscript>
 <div class="bg"></div>
 <div id="sparks"></div>
 <div class="wrap">
@@ -170,8 +174,8 @@
       <circle cx="11" cy="45" r="1.1" fill="#d9cfff"/>
     </svg>
     <h1 data-en="Your Past Life, Present Bond, and Next Life with the Ziwei Star">你与紫微星的前世、今缘、与来生</h1>
-    <div class="en">Who am I? Who am I from? Where am I to go?<br>The Matrix is here NOW!</div>
-    <div class="tag">Just want to know the only answer.</div>
+    <div class="en">Who am I? Where do I come from? Where am I to go?<br>The Matrix is here NOW!</div>
+    <div class="tag">I just want the one true answer.</div>
     <div class="langtoggle" style="text-align:center; margin-top:12px;">
       <button id="btnZhTop" class="on">中文</button><button id="btnEnTop">English</button>
     </div>
@@ -188,14 +192,14 @@
   </section>
 
   <!-- ============ 表单 ============ -->
-  <div class="card" id="formCard">
+  <form class="card" id="formCard">
     <h2 data-en="Before we begin, a little about you">开始之前，先认识一下你</h2>
-    <p class="note" data-en="Birth details are used only to generate this one story and are not saved. One reading per day.">出生信息只用于生成这一次的故事，不保存。每天限测 1 次。</p>
+    <p class="note" data-en="Birth details are used only to generate this one story and are not saved. One reading per day (counted by IP).">出生信息只用于生成这一次的故事，不保存。每天限测 1 次（按 IP 计）。</p>
 
     <label class="f" data-en="Which story would you like to hear? (required)">你想讲哪一个故事？（必选）</label>
     <div class="modes" id="modes">
-      <label class="mode"><input type="radio" name="mode" value="future" checked><span data-en="My own future">自己的未来</span><br><small data-en="My bond with the Ziwei Star, and my own fortune">与紫微星的缘分 + 自己的运势</small></label>
-      <label class="mode"><input type="radio" name="mode" value="child"><span data-en="A child">一位子女</span><br><small data-en="The Ziwei bond and fortune of a child who is born and has a name">已出生、有名字的子女的紫微缘和运势</small></label>
+      <label class="mode"><input type="radio" name="mode" value="future" checked><span data-en="My own future">自己的未来</span><br><small data-en="My bond with the Ziwei Star, and the symbols in the story">与紫微星的缘分 + 故事里的象征</small></label>
+      <label class="mode"><input type="radio" name="mode" value="child"><span data-en="A child">一位子女</span><br><small data-en="The Ziwei bond and story symbols of a child who is born">已出生子女的紫微缘和故事里的象征</small></label>
       <label class="mode"><input type="radio" name="mode" value="marriage"><span data-en="Love and marriage">姻缘</span><br><small data-en="My destined bond with the Ziwei Star">自己与紫微星的姻缘</small></label>
       <label class="mode"><input type="radio" name="mode" value="futureChild"><span data-en="A future child">未来的孩子</span><br><small data-en="No children yet: the Ziwei bond of a child yet to come">暂无子女：之后若有子女，其与紫微星的缘分</small></label>
     </div>
@@ -248,9 +252,10 @@
     <input type="text" id="birthplace" placeholder="比如：北京、里贾纳……" data-en-ph="e.g. Beijing, Regina…" maxlength="100">
 
     <div id="childWrap" class="hidden">
-      <label class="f" for="childName" data-en="Your child’s name (required, since you chose “A child”)">子女的名字（必填，因为你选了“一位子女”）</label>
-      <input type="text" id="childName" placeholder="孩子的名字" data-en-ph="Your child’s name" maxlength="50">
-    </div>
+  <label class="f" for="childName" data-en="Your child’s nickname (optional)">孩子昵称（可不填）</label>
+  <input type="text" id="childName" placeholder="孩子昵称（可不填）" data-en-ph="Your child’s nickname (optional)" maxlength="50">
+  <p class="note" style="margin:6px 0 0;" data-en="If this reading is for a minor, please confirm you are their guardian and consent to providing this information.">为未成年子女测算，请确认您是其监护人并同意提供以上信息。</p>
+</div>
 
     <label class="f" for="imagination"><span data-en="Imagine: if your past life was lived on earth, where would you have been born?">想象一下，如果你的前世在人间，你会在哪个地方出生？</span> <small data-en="(optional)">（选填）</small></label>
     <input type="text" id="imagination" placeholder="写一个地方，或者留白" data-en-ph="Write a place, or leave it blank" maxlength="200">
@@ -258,9 +263,9 @@
     <label class="f" for="sentence"><span data-en="In one sentence, write what you are thinking right now">用一句话，写下你此刻的想法</span> <small data-en="(optional, within 100 characters; it will appear in the story exactly as written)">（选填，100 字以内；会原样放进故事里）</small></label>
     <input type="text" id="sentence" placeholder="随便写一句……" data-en-ph="Write anything…" maxlength="100">
 
-    <button id="submitBtn" data-en="Begin the reading">开始测算</button>
+    <button id="submitBtn" type="submit" data-en="Begin the reading">开始测算</button>
     <div class="status" id="status"></div>
-  </div>
+  </form>
 
   <!-- ============ 结果 ============ -->
   <div id="result" class="hidden">
@@ -277,7 +282,7 @@
       </div>
       <div id="storyEn" class="hidden">
         <div class="chapter"><h3>Who am I?</h3><p id="enWho"></p></div>
-        <div class="chapter"><h3>Who am I from?</h3><p id="enFrom"></p></div>
+        <div class="chapter"><h3>Where do I come from?</h3><p id="enFrom"></p></div>
         <div class="chapter"><h3>Where am I to go?</h3><p id="enTo"></p></div>
         <div class="chapter" id="enPoemWrap"><h3>A Little Poem</h3><p id="enPoem"></p></div>
       </div>
@@ -297,8 +302,8 @@
     </div>
 
     <div class="card" id="flowerCard">
-      <h2 data-en="Alms · A little flower">化缘 · 一朵小花</h2>
-      <p data-en="If you liked it, please send this answer a little flower. This test is also a bit of passing the alms bowl — one flower is 1 unit of local currency, no upper limit, as many as you like.">如果你满意，请给这个答案送一朵小花。这个测试也当“化缘”啦——一朵花 1 元（当地货币 1 元），不设上限，多少随你。</p>
+      <h2 data-en="Support this project · A little flower">支持这个项目 · 一朵小花</h2>
+      <p data-en="If you liked it, please send this answer a little flower to support this project — one flower is 1 unit of local currency, no upper limit, as many as you like.">如果你满意，请给这个答案送一朵小花，支持这个项目——一朵花 1 元（当地货币 1 元），不设上限，多少随你。</p>
       <div id="flowerBefore">
         <a class="btn" id="paypalBtn" href="#" target="_blank" rel="noopener" data-en="❀ Send a little flower (PayPal · 1 CAD)">❀ 送一朵小花（PayPal · 1 加元）</a>
         <button class="btn ghost" id="etransferBtn" data-en="e-transfer works too">e-transfer 也可以</button>
@@ -322,35 +327,19 @@
       <a href="https://open.spotify.com/search/%E6%AF%9B%E4%B8%8D%E6%98%93%20%E5%A6%82%E6%9E%9C%E6%9C%89%E4%B8%80%E5%A4%A9%E6%88%91%E5%8F%98%E5%BE%97%E5%BE%88%E6%9C%89%E9%92%B1" target="_blank" rel="noopener">Spotify</a>
       <a href="https://www.youtube.com/results?search_query=%E6%AF%9B%E4%B8%8D%E6%98%93+%E5%A6%82%E6%9E%9C%E6%9C%89%E4%B8%80%E5%A4%A9%E6%88%91%E5%8F%98%E5%BE%97%E5%BE%88%E6%9C%89%E9%92%B1" target="_blank" rel="noopener">YouTube</a>
     </div>
-    <blockquote>
-      现在是里贾纳时间17:46分，2026年2月24日周二。<br>
-      忽然有兴致写这么一个关于“紫微星”的娱乐测试，测测你与传说中的“紫微星”的前世、今缘、与来生。<br>
-      从小对神秘事物感兴趣的我，免不了对“紫微斗数”的着迷。<br>
-      于是写这个娱乐测试，也当“化缘”啦:)<br>
-      我很欣赏音乐人毛不易的很多歌，让我想起了这首《如果有一天我变得很有钱》，希望那些邪恶的人不再拥有话语权，希望看得到那些难得一见的笑脸。<br>
-      诚心祝福天下好人一生平安、健康、幸福、快乐每一天。心有所想，事有所成。<br>
-      这是一个前所未有的时代，让我们尽情享受这一切的美好，人与人和谐相处，没有疾病，没有战争，没有灾祸，不愁衣食，沉浸在这个真实的Matrix世界里，体验像鸟儿一样自由地飞翔~<br>
-      你，准备好了么……<br>
-      <small>—— Helen，2026-02-24，写下这个测试的第一版想法</small>
-      <div style="margin-top:14px; padding-top:12px; border-top:1px solid var(--card-line); color:var(--muted); font-size:13.5px; line-height:1.8;">
-        It's 17:46 Regina time, Tuesday, February 24, 2026.<br>
-        Out of the blue, I felt like writing this little entertainment test about the “Ziwei Star” — to see your past life, present connection, and next life with the legendary “Ziwei Star.”<br>
-        I've been drawn to mysterious things since I was a child, so of course I'm fascinated by “Ziwei Dou Shu.”<br>
-        So here is this entertainment test — and a bit of passing the alms bowl, too. :)<br>
-        I really admire many of musician Mao Buyi's songs. They reminded me of this one, “If One Day I Become Very Rich.” I hope that evil people will no longer have a say, and I hope to see those smiles we so rarely see.<br>
-        I sincerely wish every good person in the world a life of peace, health, happiness, and joy, every single day — may your wishes be fulfilled and your undertakings succeed.<br>
-        This is an age like no other. Let us enjoy all of this beauty to the fullest — people living in harmony with one another, no sickness, no war, no disaster, no worry about food and clothing — immersed in this real Matrix world, flying as freely as birds~<br>
-        Are you ready……?<br>
-        <small>— Helen, 2026-02-24, writing down the first draft of this test</small>
-      </div>
-    </blockquote>
+    <blockquote data-en-html="This test was written on February 24, 2026, with Mao Buyi's “If One Day I Become Very Rich” playing. I hope that evil people will no longer have a say, and I hope to see those smiles we so rarely see.<br><small>— Helen, 2026-02-24</small>">
+  这个测试写于 2026 年 2 月 24 日，耳边是毛不易的《如果有一天我变得很有钱》。希望那些邪恶的人不再拥有话语权，希望看得到那些难得一见的笑脸。<br>
+  <small>—— Helen，2026-02-24</small>
+</blockquote>
   </div>
 
   <footer>
     <span data-en="© onlymanes.ai · This page is an entertainment test, not a fate reading">© onlymanes.ai · 本页为娱乐测试，不作命运判断</span><br>
     <span data-en="The Ziwei Star portrait is AI-generated; chart engine: Renhuai123/ziwei-doushu (MIT); the story is told by AI">紫微星画像由 AI 生成；排盘引擎：Renhuai123/ziwei-doushu（MIT）；故事由 AI 讲述</span><br>
     <span data-en="A Ziwei Star (A-Zi) entertainment test: stories told with Ziwei Dou Shu and Ziwei chart casting — never a fate prediction.">紫微星（阿紫）娱乐测试：用紫微斗数与紫微排盘讲故事，不预测命运。</span><br>
-    <span data-en="Visitors">访客</span> <span id="visitorCount">…</span> <small data-en="(one count per IP)">（同一个 IP 只算一次）</small>
+<span id="visitorLine"><span data-en="Total unique visitors">累计去重访客</span> <span id="visitorCount">加载中…</span> <small data-en="(one count per IP)">（同一 IP 只算一次）</small></span>
+    <br>
+    <span data-en-html="Operated by onlymanes · Contact: <a href=&quot;mailto:onlymanes@gmail.com&quot; style=&quot;color:var(--faint);&quot;>onlymanes@gmail.com</a> · <a href=&quot;/privacy.html&quot; style=&quot;color:var(--faint);&quot;>Privacy</a> · <a href=&quot;/terms.html&quot; style=&quot;color:var(--faint);&quot;>Terms</a>">运营主体：onlymanes · 联系：<a href="mailto:onlymanes@gmail.com" style="color:var(--faint);">onlymanes@gmail.com</a> · <a href="/privacy.html" style="color:var(--faint);">隐私政策</a> · <a href="/terms.html" style="color:var(--faint);">服务条款</a></span><br>
   </footer>
 </div>
 
@@ -456,7 +445,8 @@ const T = {
   dailyLimit: { zh: '今天已经测过一次啦，明天再来。', en: 'You have already had one reading today. Please come back tomorrow.' },
   modelFailed: { zh: '故事没写出来，请稍后再试一次（今天的次数还在）。', en: 'The story did not come out. Please try again shortly (today’s attempt is still yours).' },
   genericError: { zh: '出错了，请稍后再试。', en: 'Something went wrong. Please try again shortly.' },
-  connFailed: { zh: '连接失败，请检查网络后重试。', en: 'Connection failed. Please check your network and try again.' },
+  connFailed: { zh: '服务器暂时没有回应，请稍后再试一次。', en: 'The server didn’t respond in time. Please try again shortly.' },
+  retrying: { zh: '第一次没连上，正在重试…', en: 'First try didn’t connect — retrying…' },
 };
 function t(key) { return (T[key] && T[key][LANG]) || (T[key] && T[key].zh) || key; }
 
@@ -627,7 +617,7 @@ function refreshLunarDays() {
 function fillLunarSelects() {
   const y = $('lunarYear'), m = $('lunarMonth');
   y.innerHTML = '<option value="">年</option>';
-  for (let yr = 1930; yr <= 2030; yr++) {
+  for (let yr = 1930; yr <= new Date().getFullYear(); yr++) {
     const o = document.createElement('option');
     o.value = yr; o.textContent = yr + '年';
     y.appendChild(o);
@@ -665,7 +655,7 @@ function refreshSolarDays() {
 function fillSolarSelects() {
   const y = $('solarYear'), m = $('solarMonth');
   y.innerHTML = '<option value="">年</option>';
-  for (let yr = 1930; yr <= 2030; yr++) {
+  for (let yr = 1930; yr <= new Date().getFullYear(); yr++) {
     const o = document.createElement('option');
     o.value = yr; o.textContent = yr + '年';
     y.appendChild(o);
@@ -774,7 +764,8 @@ function buildUserChart(form) {
 }
 
 /* ---------- 提交 ---------- */
-submitBtn.onclick = async () => {
+async function fetchWithTimeout(url, options, timeoutMs) { const c = new AbortController(); const timer = setTimeout(() => c.abort(), timeoutMs || 30000); try { return await fetch(url, Object.assign({}, options, { signal: c.signal })); } finally { clearTimeout(timer); } }
+$('formCard').addEventListener('submit', async (e) => { e.preventDefault();
   const mode = document.querySelector('input[name=mode]:checked').value;
   const calendar = document.querySelector('input[name=calendar]:checked').value;
   let birthDate = '';
@@ -789,7 +780,6 @@ submitBtn.onclick = async () => {
     }
   }
   const childName = $('childName').value.trim();
-  if (mode === 'child' && !childName) { statusEl.textContent = t('needChildName'); return; }
   const now = new Date();
   const form = {
     calendar: calendar,
@@ -825,11 +815,22 @@ submitBtn.onclick = async () => {
     childName: form.childName,
   };
   try {
-    const r = await fetch(API_BASE + '/api/ziwei', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    });
+    let r = null;
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        r = await fetchWithTimeout(API_BASE + '/api/ziwei', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        }, 30000);
+        break;
+      } catch (err) {
+        if (attempt === 0) { statusEl.textContent = t('retrying'); continue; }
+        statusEl.innerHTML = t('connFailed') + ' <a href="mailto:onlymanes@gmail.com" style="color:var(--gold);">反馈：onlymanes@gmail.com</a>';
+        submitBtn.disabled = false;
+        return;
+      }
+    }
     const j = await r.json();
     if (!r.ok) {
       let msg;
@@ -844,10 +845,10 @@ submitBtn.onclick = async () => {
     renderResult(j, form);
     statusEl.textContent = '';
   } catch (e) {
-    statusEl.textContent = (LANG === 'en') ? ('Connection failed: ' + e.message + '. Please check your network and try again.') : ('连接失败：' + e.message + '，请检查网络后重试。');
+    statusEl.innerHTML = t('connFailed') + ' <a href="mailto:onlymanes@gmail.com" style="color:var(--gold);">反馈：onlymanes@gmail.com</a>';
     submitBtn.disabled = false;
   }
-};
+});
 
 /* 六十四卦白话简释（只讲卦象的意思，不作命运判断；2026-11-14 Helen 要求加上） */
 const HEXAGRAM_MEANINGS = {
@@ -1039,7 +1040,7 @@ async function recordGift(token, method) {
   fetch(API_BASE + '/api/visitors')
     .then(r => r.json())
     .then(j => { if (j && typeof j.likely_human_visitors === 'number') el.textContent = String(j.likely_human_visitors); })
-    .catch(function () { el.textContent = '–'; });
+    .catch(function () { var vl = document.getElementById('visitorLine'); if (vl) vl.style.display = 'none'; });
 })();
 
 /* 应用保存过的语言偏好 */
