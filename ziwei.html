@@ -3,7 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>你与紫微星的前世、今缘、与来生 · onlymanes.ai</title>
+<title>你与紫微星（阿紫）的前世、今缘、与来生 · 紫微斗数紫微排盘 | onlymanes.ai</title>
+<meta name="description" content="紫微星（阿紫）娱乐测试：用紫微斗数与紫微排盘讲故事，测你与传说中的紫微星的前世、今缘、与来生。不预测命运、不作人生决定。Ziwei Star (A-Zi) entertainment test — stories told with Ziwei Dou Shu and Ziwei chart casting.">
+<meta name="keywords" content="紫微星,阿紫,紫微斗数,紫微排盘,Ziwei Star,Zi Wei Dou Shu">
+<link rel="canonical" href="https://onlymanes.ai/ziwei.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="onlymanes.ai">
+<meta property="og:title" content="你与紫微星（阿紫）的前世、今缘、与来生 · 紫微斗数紫微排盘">
+<meta property="og:description" content="紫微星（阿紫）娱乐测试：用紫微斗数与紫微排盘讲故事。不预测命运、不作人生决定。">
+<meta property="og:url" content="https://onlymanes.ai/ziwei.html">
+<meta property="og:image" content="https://onlymanes.ai/ziwei-star.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="你与紫微星（阿紫）的前世、今缘、与来生 · 紫微斗数紫微排盘">
+<meta name="twitter:description" content="紫微星（阿紫）娱乐测试：用紫微斗数与紫微排盘讲故事。不预测命运、不作人生决定。">
+<meta name="twitter:image" content="https://onlymanes.ai/ziwei-star.webp">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"你与紫微星（阿紫）的前世、今缘、与来生","description":"紫微星（阿紫）娱乐测试：用紫微斗数与紫微排盘讲故事，测你与传说中的紫微星的前世、今缘、与来生。不预测命运、不作人生决定。","url":"https://onlymanes.ai/ziwei.html","inLanguage":"zh-CN","keywords":["紫微星","阿紫","紫微斗数","紫微排盘"]}</script>
 <link rel="icon" type="image/svg+xml" href="ziwei-icon.svg">
 <style>
   :root {
@@ -150,9 +164,12 @@
       <circle cx="52" cy="12" r="1.3" fill="#ffffff"/>
       <circle cx="11" cy="45" r="1.1" fill="#d9cfff"/>
     </svg>
-    <h1>你与紫微星的前世、今缘、与来生</h1>
+    <h1 data-en="Your Past Life, Present Bond, and Next Life with the Ziwei Star">你与紫微星的前世、今缘、与来生</h1>
     <div class="en">Who am I? Who am I from? Where am I to go?<br>The Matrix is here NOW!</div>
     <div class="tag">Just want to know the only answer.</div>
+    <div class="langtoggle" style="text-align:center; margin-top:12px;">
+      <button id="btnZhTop" class="on">中文</button><button id="btnEnTop">English</button>
+    </div>
   </header>
 
   <div class="disclaimer">
@@ -162,76 +179,76 @@
 
   <!-- ============ 表单 ============ -->
   <div class="card" id="formCard">
-    <h2>开始之前，先认识一下你</h2>
-    <p class="note">出生信息只用于生成这一次的故事，不保存。每天限测 1 次。</p>
+    <h2 data-en="Before we begin, a little about you">开始之前，先认识一下你</h2>
+    <p class="note" data-en="Birth details are used only to generate this one story and are not saved. One reading per day.">出生信息只用于生成这一次的故事，不保存。每天限测 1 次。</p>
 
-    <label class="f">你想讲哪一个故事？（必选）</label>
+    <label class="f" data-en="Which story would you like to hear? (required)">你想讲哪一个故事？（必选）</label>
     <div class="modes" id="modes">
-      <label class="mode"><input type="radio" name="mode" value="future" checked>自己的未来<br><small>与紫微星的缘分 + 自己的运势</small></label>
-      <label class="mode"><input type="radio" name="mode" value="child">一位子女<br><small>已出生、有名字的子女的紫微缘和运势</small></label>
-      <label class="mode"><input type="radio" name="mode" value="marriage">姻缘<br><small>自己与紫微星的姻缘</small></label>
-      <label class="mode"><input type="radio" name="mode" value="futureChild">未来的孩子<br><small>暂无子女：之后若有子女，其与紫微星的缘分</small></label>
+      <label class="mode"><input type="radio" name="mode" value="future" checked><span data-en="My own future">自己的未来</span><br><small data-en="My bond with the Ziwei Star, and my own fortune">与紫微星的缘分 + 自己的运势</small></label>
+      <label class="mode"><input type="radio" name="mode" value="child"><span data-en="A child">一位子女</span><br><small data-en="The Ziwei bond and fortune of a child who is born and has a name">已出生、有名字的子女的紫微缘和运势</small></label>
+      <label class="mode"><input type="radio" name="mode" value="marriage"><span data-en="Love and marriage">姻缘</span><br><small data-en="My destined bond with the Ziwei Star">自己与紫微星的姻缘</small></label>
+      <label class="mode"><input type="radio" name="mode" value="futureChild"><span data-en="A future child">未来的孩子</span><br><small data-en="No children yet: the Ziwei bond of a child yet to come">暂无子女：之后若有子女，其与紫微星的缘分</small></label>
     </div>
 
     <div class="row2">
       <div>
-        <label class="f" for="solarYear">出生年月日（必填）</label>
+        <label class="f" for="solarYear" data-en="Date of birth (required)">出生年月日（必填）</label>
         <div id="solarDateWrap">
           <div class="lunar3">
-            <select id="solarYear" aria-label="阳历年"></select>
-            <select id="solarMonth" aria-label="阳历月"></select>
-            <select id="solarDay" aria-label="阳历日"></select>
+            <select id="solarYear" aria-label="阳历年" data-en-aria="Solar year"></select>
+            <select id="solarMonth" aria-label="阳历月" data-en-aria="Solar month"></select>
+            <select id="solarDay" aria-label="阳历日" data-en-aria="Solar day"></select>
           </div>
         </div>
         <div id="lunarDateWrap" class="hidden">
           <div class="lunar3">
-            <select id="lunarYear" aria-label="农历年"></select>
-            <select id="lunarMonth" aria-label="农历月"></select>
-            <select id="lunarDay" aria-label="农历日"></select>
+            <select id="lunarYear" aria-label="农历年" data-en-aria="Lunar year"></select>
+            <select id="lunarMonth" aria-label="农历月" data-en-aria="Lunar month"></select>
+            <select id="lunarDay" aria-label="农历日" data-en-aria="Lunar day"></select>
           </div>
-          <p class="note" style="margin:6px 0 0;">按农历写法选，如正月初三。闰月不用你选，代码按万年历算。</p>
+          <p class="note" style="margin:6px 0 0;" data-en="Pick by lunar date, e.g. the 3rd day of the 1st lunar month. Leap months are handled automatically.">按农历写法选，如正月初三。闰月不用你选，代码按万年历算。</p>
         </div>
       </div>
       <div>
-        <label class="f">历法</label>
+        <label class="f" data-en="Calendar">历法</label>
         <div class="seg" style="padding-top:10px;">
-          <label><input type="radio" name="calendar" value="solar" checked> 阳历</label>
-          <label><input type="radio" name="calendar" value="lunar"> 农历</label>
+          <label><input type="radio" name="calendar" value="solar" checked> <span data-en="Solar">阳历</span></label>
+          <label><input type="radio" name="calendar" value="lunar"> <span data-en="Lunar">农历</span></label>
         </div>
       </div>
     </div>
 
     <div class="row2">
       <div>
-        <label class="f" for="birthTime">出生时间 <small>（选填，精确到分钟，24 小时制，如 17:30）</small></label>
+        <label class="f" for="birthTime"><span data-en="Time of birth">出生时间</span> <small data-en="(optional, to the minute, 24-hour clock, e.g. 17:30)">（选填，精确到分钟，24 小时制，如 17:30）</small></label>
         <input type="time" id="birthTime" placeholder="17:30">
-        <p class="note" style="margin:6px 0 0;">不知道可以不填；不填暂按午时排盘，填了会更贴合。23:00 后按次日排盘。</p>
+        <p class="note" style="margin:6px 0 0;" data-en="Leave blank if you don’t know; without it, the chart is cast for the noon hour. Filling it in makes the reading fit better. After 23:00 counts as the next day.">不知道可以不填；不填暂按午时排盘，填了会更贴合。23:00 后按次日排盘。</p>
       </div>
       <div>
-        <label class="f" for="gender">性别 <small>（选填，只用于排盘方向）</small></label>
+        <label class="f" for="gender"><span data-en="Gender">性别</span> <small data-en="(optional, only affects the chart’s direction)">（选填，只用于排盘方向）</small></label>
         <select id="gender">
-          <option value="">不填</option>
-          <option value="女">女</option>
-          <option value="男">男</option>
+          <option value="" data-en="Not specified">不填</option>
+          <option value="女" data-en="Female">女</option>
+          <option value="男" data-en="Male">男</option>
         </select>
       </div>
     </div>
 
-    <label class="f" for="birthplace">出生地 <small>（选填）</small></label>
-    <input type="text" id="birthplace" placeholder="比如：北京、里贾纳……" maxlength="100">
+    <label class="f" for="birthplace"><span data-en="Place of birth">出生地</span> <small data-en="(optional)">（选填）</small></label>
+    <input type="text" id="birthplace" placeholder="比如：北京、里贾纳……" data-en-ph="e.g. Beijing, Regina…" maxlength="100">
 
     <div id="childWrap" class="hidden">
-      <label class="f" for="childName">子女的名字（必填，因为你选了“一位子女”）</label>
-      <input type="text" id="childName" placeholder="孩子的名字" maxlength="50">
+      <label class="f" for="childName" data-en="Your child’s name (required, since you chose “A child”)">子女的名字（必填，因为你选了“一位子女”）</label>
+      <input type="text" id="childName" placeholder="孩子的名字" data-en-ph="Your child’s name" maxlength="50">
     </div>
 
-    <label class="f" for="imagination">想象一下，如果你的前世在人间，你会在哪个地方出生？ <small>（选填）</small></label>
-    <input type="text" id="imagination" placeholder="写一个地方，或者留白" maxlength="200">
+    <label class="f" for="imagination"><span data-en="Imagine: if your past life was lived on earth, where would you have been born?">想象一下，如果你的前世在人间，你会在哪个地方出生？</span> <small data-en="(optional)">（选填）</small></label>
+    <input type="text" id="imagination" placeholder="写一个地方，或者留白" data-en-ph="Write a place, or leave it blank" maxlength="200">
 
-    <label class="f" for="sentence">用一句话，写下你此刻的想法 <small>（选填，100 字以内；会原样放进故事里）</small></label>
-    <input type="text" id="sentence" placeholder="随便写一句……" maxlength="100">
+    <label class="f" for="sentence"><span data-en="In one sentence, write what you are thinking right now">用一句话，写下你此刻的想法</span> <small data-en="(optional, within 100 characters; it will appear in the story exactly as written)">（选填，100 字以内；会原样放进故事里）</small></label>
+    <input type="text" id="sentence" placeholder="随便写一句……" data-en-ph="Write anything…" maxlength="100">
 
-    <button id="submitBtn">开始测算</button>
+    <button id="submitBtn" data-en="Begin the reading">开始测算</button>
     <div class="status" id="status"></div>
   </div>
 
@@ -246,50 +263,52 @@
         <div class="chapter"><h3>我是谁</h3><p id="zhWho"></p></div>
         <div class="chapter"><h3>我从哪来</h3><p id="zhFrom"></p></div>
         <div class="chapter"><h3>我要去哪</h3><p id="zhTo"></p></div>
+        <div class="chapter" id="zhPoemWrap"><h3 data-en="A little poem">一首小诗</h3><p id="zhPoem"></p></div>
       </div>
       <div id="storyEn" class="hidden">
         <div class="chapter"><h3>Who am I?</h3><p id="enWho"></p></div>
         <div class="chapter"><h3>Who am I from?</h3><p id="enFrom"></p></div>
         <div class="chapter"><h3>Where am I to go?</h3><p id="enTo"></p></div>
+        <div class="chapter" id="enPoemWrap"><h3>A Little Poem</h3><p id="enPoem"></p></div>
       </div>
     </div>
 
     <div class="card">
-      <h2>今晚的星</h2>
-      <p class="kv">有两颗候选紫微星，50% 掷选定了一颗。今晚为你讲故事的，就是掷到的这一颗。</p>
-      <h3>梅花易数 · 这一秒的卦</h3>
+      <h2 data-en="Tonight’s star">今晚的星</h2>
+      <p class="kv" data-en="There are two candidate Ziwei Stars, and a 50% cast picked one. Tonight’s story is told by the one that was cast — everyone calls her A-Zi.">有两颗候选紫微星，50% 掷选定了一颗。今晚为你讲故事的，就是掷到的这一颗——大家叫她阿紫。</p>
+      <h3 data-en="Plum Blossom Numerology · The hexagram of this second">梅花易数 · 这一秒的卦</h3>
       <p class="kv" id="meihuaInfo"></p>
     </div>
 
     <div class="card">
-      <h2>这个故事是怎么来的</h2>
+      <h2 data-en="How this story came to be">这个故事是怎么来的</h2>
       <ul class="audit" id="auditList" style="padding-left:20px; font-size:14px; line-height:1.8;"></ul>
-      <p class="note">随机不是命运的证据——它是“这不是命运”的证据：掷到的星、抽到的卦，都是可以复核的数，不是天意。</p>
+      <p class="note" data-en="Randomness is not evidence of fate — it is evidence that this is not fate: the star that was cast and the hexagram that was drawn are numbers you can check, not the will of heaven.">随机不是命运的证据——它是“这不是命运”的证据：掷到的星、抽到的卦，都是可以复核的数，不是天意。</p>
     </div>
 
     <div class="card" id="flowerCard">
-      <h2>化缘 · 一朵小花</h2>
-      <p>如果你满意，请给这个答案送一朵小花。这个测试也当“化缘”啦——一朵花 1 元（当地货币 1 元），不设上限，多少随你。</p>
+      <h2 data-en="Alms · A little flower">化缘 · 一朵小花</h2>
+      <p data-en="If you liked it, please send this answer a little flower. This test is also a bit of passing the alms bowl — one flower is 1 unit of local currency, no upper limit, as many as you like.">如果你满意，请给这个答案送一朵小花。这个测试也当“化缘”啦——一朵花 1 元（当地货币 1 元），不设上限，多少随你。</p>
       <div id="flowerBefore">
-        <a class="btn" id="paypalBtn" href="#" target="_blank" rel="noopener">❀ 送一朵小花（PayPal · 1 加元）</a>
-        <button class="btn ghost" id="etransferBtn">e-transfer 也可以</button>
-        <p class="note" id="etransferNote" style="display:none;">用 e-transfer 汇 1 加元到 <b>onlymanes@gmail.com</b>，备注「紫微星小花」，然后点下面的“我已送花”。</p>
-        <p><button class="btn ghost" id="giftDoneBtn">我已送花</button></p>
+        <a class="btn" id="paypalBtn" href="#" target="_blank" rel="noopener" data-en="❀ Send a little flower (PayPal · 1 CAD)">❀ 送一朵小花（PayPal · 1 加元）</a>
+        <button class="btn ghost" id="etransferBtn" data-en="e-transfer works too">e-transfer 也可以</button>
+        <p class="note" id="etransferNote" style="display:none;" data-en-html="Send 1 CAD by e-transfer to <b>onlymanes@gmail.com</b> with the note “Ziwei Star flower”, then click “I’ve sent a flower” below.">用 e-transfer 汇 1 加元到 <b>onlymanes@gmail.com</b>，备注「紫微星小花」，然后点下面的“我已送花”。</p>
+        <p><button class="btn ghost" id="giftDoneBtn" data-en="I’ve sent a flower">我已送花</button></p>
       </div>
       <div id="flowerAfter" class="hidden">
         <div class="flower-big" id="flowerBig"></div>
-        <p style="text-align:center;">谢谢你的花。它已经开在这里了。<span id="flowerColorNote"></span><br><small style="color:var(--muted);">V1 只记录你的自愿确认，未接支付回调核对到账；自动核销是 V2 的事。</small></p>
+        <p style="text-align:center;"><span data-en="Thank you for your flower. It has bloomed right here.">谢谢你的花。它已经开在这里了。</span><span id="flowerColorNote"></span><br><small style="color:var(--muted);" data-en="V1 only records your voluntary confirmation; it does not verify payment via a callback. Automatic verification is a V2 feature.">V1 只记录你的自愿确认，未接支付回调核对到账；自动核销是 V2 的事。</small></p>
       </div>
     </div>
   </div>
 
   <!-- ============ 人文 / 音乐 ============ -->
   <div class="card">
-    <h2>人文 · 一首歌的时间</h2>
-    <p>毛不易《如果有一天我变得很有钱》——点下面去有版权的平台听（本站不托管音频）：</p>
+    <h2 data-en="Culture · The time of a song">人文 · 一首歌的时间</h2>
+    <p data-en="Mao Buyi’s “If One Day I Become Very Rich” — listen on a licensed platform below (this site does not host audio):">毛不易《如果有一天我变得很有钱》——点下面去有版权的平台听（本站不托管音频）：</p>
     <div class="music-links">
-      <a href="https://y.qq.com/n/ryqq/search?w=%E6%AF%9B%E4%B8%8D%E6%98%93%20%E5%A6%82%E6%9E%9C%E6%9C%89%E4%B8%80%E5%A4%A9%E6%88%91%E5%8F%98%E5%BE%97%E5%BE%88%E6%9C%89%E9%92%B1" target="_blank" rel="noopener">QQ音乐</a>
-      <a href="https://music.163.com/#/search/m/?s=%E6%AF%9B%E4%B8%8D%E6%98%93%20%E5%A6%82%E6%9E%9C%E6%9C%89%E4%B8%80%E5%A4%A9%E6%88%91%E5%8F%98%E5%BE%97%E5%BE%88%E6%9C%89%E9%92%B1&type=1" target="_blank" rel="noopener">网易云音乐</a>
+      <a href="https://y.qq.com/n/ryqq/search?w=%E6%AF%9B%E4%B8%8D%E6%98%93%20%E5%A6%82%E6%9E%9C%E6%9C%89%E4%B8%80%E5%A4%A9%E6%88%91%E5%8F%98%E5%BE%97%E5%BE%88%E6%9C%89%E9%92%B1" target="_blank" rel="noopener" data-en="QQ Music">QQ音乐</a>
+      <a href="https://music.163.com/#/search/m/?s=%E6%AF%9B%E4%B8%8D%E6%98%93%20%E5%A6%82%E6%9E%9C%E6%9C%89%E4%B8%80%E5%A4%A9%E6%88%91%E5%8F%98%E5%BE%97%E5%BE%88%E6%9C%89%E9%92%B1&type=1" target="_blank" rel="noopener" data-en="NetEase Cloud Music">网易云音乐</a>
       <a href="https://open.spotify.com/search/%E6%AF%9B%E4%B8%8D%E6%98%93%20%E5%A6%82%E6%9E%9C%E6%9C%89%E4%B8%80%E5%A4%A9%E6%88%91%E5%8F%98%E5%BE%97%E5%BE%88%E6%9C%89%E9%92%B1" target="_blank" rel="noopener">Spotify</a>
       <a href="https://www.youtube.com/results?search_query=%E6%AF%9B%E4%B8%8D%E6%98%93+%E5%A6%82%E6%9E%9C%E6%9C%89%E4%B8%80%E5%A4%A9%E6%88%91%E5%8F%98%E5%BE%97%E5%BE%88%E6%9C%89%E9%92%B1" target="_blank" rel="noopener">YouTube</a>
     </div>
@@ -318,8 +337,10 @@
   </div>
 
   <footer>
-    © onlymanes.ai · 本页为娱乐测试，不作命运判断<br>
-    紫微星画像由 AI 生成；排盘引擎：Renhuai123/ziwei-doushu（MIT）；故事由 AI 讲述
+    <span data-en="© onlymanes.ai · This page is an entertainment test, not a fate reading">© onlymanes.ai · 本页为娱乐测试，不作命运判断</span><br>
+    <span data-en="The Ziwei Star portrait is AI-generated; chart engine: Renhuai123/ziwei-doushu (MIT); the story is told by AI">紫微星画像由 AI 生成；排盘引擎：Renhuai123/ziwei-doushu（MIT）；故事由 AI 讲述</span><br>
+    <span data-en="A Ziwei Star (A-Zi) entertainment test: stories told with Ziwei Dou Shu and Ziwei chart casting — never a fate prediction.">紫微星（阿紫）娱乐测试：用紫微斗数与紫微排盘讲故事，不预测命运。</span><br>
+    <span data-en="Visitors">访客</span> <span id="visitorCount">…</span> <small data-en="(one count per IP)">（同一个 IP 只算一次）</small>
   </footer>
 </div>
 
@@ -337,6 +358,217 @@ const BRANCHES = ['子','丑','寅','卯','辰','巳','午','未','申','酉','�
 const LUNAR_MONTH_NAMES = ['正月','二月','三月','四月','五月','六月','七月','八月','九月','十月','冬月','腊月'];
 const LUNAR_DAY_NAMES = ['初一','初二','初三','初四','初五','初六','初七','初八','初九','初十','十一','十二','十三','十四','十五','十六','十七','十八','十九','二十','廿一','廿二','廿三','廿四','廿五','廿六','廿七','廿八','廿九','三十'];
 const ZODIAC = ['鼠','牛','虎','兔','龙','蛇','马','羊','猴','鸡','狗','猪'];
+
+/* ---------- 全站中英切换 ---------- */
+let LANG = localStorage.getItem('ziwei_lang') || 'zh';
+let lastStory = null;        /* 最近一次 /api/ziwei 返回，供切换语言时重填标题与古诗 */
+let lastResultJ = null, lastResultForm = null; /* 最近一次完整结果，供切换语言时重绘梅花与审计 */
+let lastLeapMonth = 0;       /* 最近一次排盘的闰月（0 = 无） */
+let lastGenderKnown = false; /* 最近一次是否填了性别 */
+const LUNAR_MONTH_NAMES_EN = ['1st month','2nd month','3rd month','4th month','5th month','6th month','7th month','8th month','9th month','10th month','11th month','12th month'];
+const LUNAR_DAY_NAMES_EN = ['Day 1','Day 2','Day 3','Day 4','Day 5','Day 6','Day 7','Day 8','Day 9','Day 10','Day 11','Day 12','Day 13','Day 14','Day 15','Day 16','Day 17','Day 18','Day 19','Day 20','Day 21','Day 22','Day 23','Day 24','Day 25','Day 26','Day 27','Day 28','Day 29','Day 30'];
+const TRIGRAM_NAMES_EN = { 1: 'Qian', 2: 'Dui', 3: 'Li', 4: 'Zhen', 5: 'Xun', 6: 'Kan', 7: 'Gen', 8: 'Kun' };
+const HEXAGRAM_NAMES_EN = { 1: 'The Creative', 2: 'The Receptive', 3: 'Difficulty at the Beginning', 4: 'Youthful Folly', 5: 'Waiting', 6: 'Conflict', 7: 'The Army', 8: 'Holding Together', 9: 'The Taming Power of the Small', 10: 'Treading', 11: 'Peace', 12: 'Standstill', 13: 'Fellowship with Men', 14: 'Possession in Great Measure', 15: 'Modesty', 16: 'Enthusiasm', 17: 'Following', 18: 'Work on What Has Been Spoiled', 19: 'Approach', 20: 'Contemplation', 21: 'Biting Through', 22: 'Grace', 23: 'Splitting Apart', 24: 'Return', 25: 'Innocence', 26: 'The Taming Power of the Great', 27: 'The Corners of the Mouth', 28: 'Preponderance of the Great', 29: 'The Abysmal', 30: 'The Clinging', 31: 'Influence', 32: 'Duration', 33: 'Retreat', 34: 'The Power of the Great', 35: 'Progress', 36: 'Darkening of the Light', 37: 'The Family', 38: 'Opposition', 39: 'Obstruction', 40: 'Deliverance', 41: 'Decrease', 42: 'Increase', 43: 'Breakthrough', 44: 'Coming to Meet', 45: 'Gathering Together', 46: 'Pushing Upward', 47: 'Oppression', 48: 'The Well', 49: 'Revolution', 50: 'The Cauldron', 51: 'The Arousing', 52: 'Keeping Still', 53: 'Development', 54: 'The Marrying Maiden', 55: 'Abundance', 56: 'The Wanderer', 57: 'The Gentle', 58: 'The Joyous', 59: 'Dispersion', 60: 'Limitation', 61: 'Inner Truth', 62: 'Preponderance of the Small', 63: 'After Completion', 64: 'Before Completion' };
+const HEXAGRAM_MEANINGS_EN = {
+  1: 'Qian is heaven — pure, strong and ceaseless, like the sky turning without rest. It speaks of constant self-strengthening.',
+  2: 'Kun is earth — soft and all-bearing, like the ground holding everything. It speaks of going along and carrying with quiet strength.',
+  3: 'Zhun is the beginning, and beginnings are hard — like a seed just sprouting. Messy, but full of life.',
+  4: 'Meng is not knowing yet — like a child just beginning to learn. It speaks of learning and of being shown the way.',
+  5: 'Xu is waiting — like waiting for rain, or for a meal. It speaks of patience: when it is time to wait, wait.',
+  6: 'Song is arguing, even going to court. It speaks of disputes — better not to force it; find a way to settle.',
+  7: 'Shi is an army, a crowd. It speaks of leading people and keeping order — act with a plan.',
+  8: 'Bi is closeness and leaning on each other, like people huddling for warmth. It speaks of drawing close and looking after one another.',
+  9: 'Xiao Xu is a small store set aside, strength still small — like clouds gathering before the rain. It speaks of saving up first, not rushing.',
+  10: 'Lü is walking, treading carefully. It speaks of watching each step, as if walking on thin ice.',
+  11: 'Tai is ease and flow — heaven and earth meeting. It speaks of things opening up and going smoothly.',
+  12: 'Pi is blockage, nothing getting through — heaven and earth apart. It speaks of a road that is closed; do not force your way.',
+  13: 'Tong Ren is being of one heart with others. It speaks of people sharing the same purpose.',
+  14: 'Da You is a great harvest. It speaks of abundance — more than you can hold.',
+  15: 'Modesty is being low though you have much — a mountain beneath the earth. It speaks of humility: fullness invites loss, modesty brings gain.',
+  16: 'Yu is delight, and also preparation — like music lifting the spirits. It speaks of being glad, and still being ready.',
+  17: 'Sui is following. It speaks of going with the way things are, and following the right people.',
+  18: 'Gu is something gone wrong that needs putting right — like a vessel with insects in it. It speaks of mending what should be mended.',
+  19: 'Lin is arrival, looking down from above. It speaks of those above coming to see, and of good fortune drawing near.',
+  20: 'Guan is watching, and being watched. It speaks of seeing clearly — and letting others see clearly too.',
+  21: 'Shi He is biting through, chewing apart. It speaks of something stuck in the middle that must be bitten through before the way opens.',
+  22: 'Grace is adornment, looking fine. It speaks of a fair outside — but do not mind the outside so much that you forget what is inside.',
+  23: 'Bo is peeling away, falling off, like plaster flaking from a wall. It speaks of things crumbling bit by bit — hold on to the root.',
+  24: 'Fu is return — like winter passing and spring coming back. It speaks of circling round and starting again from the beginning.',
+  25: 'Wu Wang is not acting rashly. It speaks of not forcing things and acting in good conscience — then no harm follows.',
+  26: 'Da Xu is a great store laid up. It speaks of great strength gathered and saved, waiting to be used.',
+  27: 'Yi is nourishment, eating. It speaks of how to feed yourself and care for your body — and of self-cultivation.',
+  28: 'Da Guo is a burden too heavy, gone too far. It speaks of pressure too great — find a way to set some of it down.',
+  29: 'Kan is water, and danger — like falling into a deep pit or crossing a great river. It speaks of danger ahead; cross it one step at a time.',
+  30: 'Li is fire, and brightness — like the sun hung in the sky. It speaks of a bright heart and seeing clearly.',
+  31: 'Xian is feeling, hearts answering each other. It speaks of two hearts sensing one another.',
+  32: 'Heng is lasting, unchanging. It speaks of a steady stream, kept going.',
+  33: 'Dun is stepping back, withdrawing. It speaks of retreating when it is time to retreat, not pushing against it.',
+  34: 'Da Zhuang is great strength, full of power. It speaks of strength at its height — but do not throw it about.',
+  35: 'Jin is rising, moving forward, like the sun coming up. It speaks of going upward, growing brighter.',
+  36: 'Ming Yi is brightness hurt and hidden — like the sun sunk beneath the earth. It speaks of light covered over; hide it away for now.',
+  37: 'Jia Ren is family. It speaks of a household with its own order, looking after one another — when the family is at peace, all goes well.',
+  38: 'Kui is being at odds, seeing differently. It speaks of two people looking in different directions; each should step back a little.',
+  39: 'Jian is being stuck, unable to move — like twisting an ankle on a mountain path. It speaks of a hard road ahead; stop and think first.',
+  40: 'Jie is untying, loosening. It speaks of the knot coming undone, the rain passing, the sky clearing.',
+  41: 'Sun is giving something up, paying out. It speaks of letting go to gain — give first, then receive.',
+  42: 'Increase is gaining, receiving help. It speaks of being helped, and things getting better and better.',
+  43: 'Guai is deciding, cutting through. It speaks of the moment to decide — be decisive.',
+  44: 'Gou is meeting, an unexpected encounter. It speaks of suddenly running into something; whether it is good or bad, look clearly.',
+  45: 'Cui is gathering, coming together. It speaks of people gathering, and things gathering too.',
+  46: 'Sheng is rising, growing tall, like a tree growing upward. It speaks of climbing step by step.',
+  47: 'Oppression is being hemmed in, no way out. It speaks of being trapped; hold steady and wait for a turn.',
+  48: 'Jing is a well. It speaks of well-water that nourishes people, and of a truth that does not change — anyone may come and draw.',
+  49: 'Ge is change, renewal. It speaks of the old way no longer working; it is time for a new way.',
+  50: 'Ding is a cauldron — steady and settled. It speaks of standing firm and secure, ready to begin great work.',
+  51: 'Zhen is thunder, sudden movement. It speaks of a sudden stir that wakes people up — movement carrying new life.',
+  52: 'Gen is a mountain, and stopping. It speaks of stopping when it is time to stop, growing still, not moving rashly.',
+  53: 'Development is slow and gradual, like water soaking into earth. It speaks of step by step, without haste.',
+  54: 'Gui Mei is marrying into a new home, settling. It speaks of the time to settle, and of putting things in their proper place.',
+  55: 'Feng is fullness, abundance — like the sun at noon at its brightest. It speaks of the peak; at the peak, mind the turn.',
+  56: 'The Wanderer is travelling, away from home. It speaks of life on the road — rely on yourself, and mind your measure.',
+  57: 'Xun is wind, gentle and yielding — like wind finding every crack. It speaks of softness, slowly seeping in.',
+  58: 'Dui is joy, and speaking. It speaks of a glad heart and sweet words; joy spreads.',
+  59: 'Huan is scattering, melting — like ice thawing, fog lifting. It speaks of what was scattered gathering again.',
+  60: 'Limitation is measure and restraint. It speaks of saving where one should, stopping where one should — restraint is what lasts.',
+  61: 'Zhong Fu is truth in the heart. It speaks of sincerity — a true heart moves people.',
+  62: 'Xiao Guo is a little too far, slightly over. It speaks of going a little over in small things, but never in great ones.',
+  63: 'Ji Ji is already done, the river crossed. It speaks of the task complete — but after completion, hold on to it.',
+  64: 'Wei Ji is not yet done, the river not yet crossed. It speaks of work unfinished, the moment not yet ripe — wait a little longer.',
+};
+/* 动态文案（状态、校验、报错） */
+const T = {
+  pickSolar: { zh: '请选阳历年月日。', en: 'Please pick the solar date (year, month, day).' },
+  pickLunar: { zh: '请选农历年月日。', en: 'Please pick the lunar date (year, month, day).' },
+  needChildName: { zh: '选了“一位子女”，请填孩子的名字。', en: 'You chose “A child” — please fill in the child’s name.' },
+  working: { zh: '正在排盘、起卦、讲故事……（约十几秒）', en: 'Casting the chart, drawing the hexagram, telling the story… (about ten seconds)' },
+  chartError: { zh: '排盘出错，请检查出生日期后重试。', en: 'Chart error — please check the birth date and try again.' },
+  lunarInvalid: { zh: '农历日期无效，请重新选择。', en: 'Invalid lunar date — please pick again.' },
+  dailyLimit: { zh: '今天已经测过一次啦，明天再来。', en: 'You have already had one reading today. Please come back tomorrow.' },
+  modelFailed: { zh: '故事没写出来，请稍后再试一次（今天的次数还在）。', en: 'The story did not come out. Please try again shortly (today’s attempt is still yours).' },
+  genericError: { zh: '出错了，请稍后再试。', en: 'Something went wrong. Please try again shortly.' },
+  connFailed: { zh: '连接失败，请检查网络后重试。', en: 'Connection failed. Please check your network and try again.' },
+};
+function t(key) { return (T[key] && T[key][LANG]) || (T[key] && T[key].zh) || key; }
+
+/* 下拉选项随语言切换（JS 生成的选项没有 data-en，在此逐项改写；不重建列表，不丢已选值） */
+function applyLangToSelects() {
+  const en = LANG === 'en';
+  const phMap = { solarYear: ['年', 'Year'], solarMonth: ['月', 'Month'], solarDay: ['日', 'Day'], lunarYear: ['年', 'Year'], lunarMonth: ['月', 'Month'], lunarDay: ['日', 'Day'] };
+  Object.keys(phMap).forEach(id => {
+    const sel = $(id); if (!sel) return;
+    for (const o of sel.options) {
+      if (o.value === '') { o.textContent = en ? phMap[id][1] : phMap[id][0]; }
+      else if (id === 'solarYear' || id === 'lunarYear') { o.textContent = en ? o.value : (o.value + '年'); }
+      else if (id === 'lunarMonth') { const i = +o.value - 1; o.textContent = en ? LUNAR_MONTH_NAMES_EN[i] : LUNAR_MONTH_NAMES[i]; }
+      else if (id === 'lunarDay') { const i = +o.value - 1; o.textContent = en ? LUNAR_DAY_NAMES_EN[i] : LUNAR_DAY_NAMES[i]; }
+    }
+  });
+}
+
+function setLang(l) {
+  LANG = (l === 'en') ? 'en' : 'zh';
+  localStorage.setItem('ziwei_lang', LANG);
+  document.querySelectorAll('[data-en]').forEach(el => {
+    if (LANG === 'en') { if (el.dataset.zh === undefined) el.dataset.zh = el.textContent; el.textContent = el.dataset.en; }
+    else if (el.dataset.zh !== undefined) { el.textContent = el.dataset.zh; }
+  });
+  document.querySelectorAll('[data-en-html]').forEach(el => {
+    if (LANG === 'en') { if (el.dataset.zhHtml === undefined) el.dataset.zhHtml = el.innerHTML; el.innerHTML = el.dataset.enHtml; }
+    else if (el.dataset.zhHtml !== undefined) { el.innerHTML = el.dataset.zhHtml; }
+  });
+  document.querySelectorAll('[data-en-ph]').forEach(el => {
+    if (LANG === 'en') { if (el.dataset.zhPh === undefined) el.dataset.zhPh = el.getAttribute('placeholder') || ''; el.setAttribute('placeholder', el.dataset.enPh); }
+    else if (el.dataset.zhPh !== undefined) { el.setAttribute('placeholder', el.dataset.zhPh); }
+  });
+  document.querySelectorAll('[data-en-aria]').forEach(el => {
+    if (LANG === 'en') { if (el.dataset.zhAria === undefined) el.dataset.zhAria = el.getAttribute('aria-label') || ''; el.setAttribute('aria-label', el.dataset.enAria); }
+    else if (el.dataset.zhAria !== undefined) { el.setAttribute('aria-label', el.dataset.zhAria); }
+  });
+  applyLangToSelects();
+  if (lastResultJ) {
+    renderStoryText(lastResultJ);
+    $('meihuaInfo').innerHTML = meihuaHTML(lastResultJ);
+    $('auditList').innerHTML = auditHTML(lastResultJ, lastResultForm).map(i => '<li>' + i + '</li>').join('');
+  } else {
+    $('storyZh').classList.toggle('hidden', LANG === 'en');
+    $('storyEn').classList.toggle('hidden', LANG !== 'en');
+  }
+  if (lastFlowerColor) updateFlowerColorNote();
+  document.querySelectorAll('#btnZh, #btnZhTop').forEach(b => b.classList.toggle('on', LANG === 'zh'));
+  document.querySelectorAll('#btnEn, #btnEnTop').forEach(b => b.classList.toggle('on', LANG === 'en'));
+  document.documentElement.lang = LANG === 'en' ? 'en' : 'zh-CN';
+}
+
+/* 故事标题与古诗（随语言切换；模型若没给英文标题/古诗则回退中文） */
+function renderStoryText(j) {
+  const en = LANG === 'en';
+  $('storyTitle').textContent = en ? (j.story.title_en || j.story.title_zh || 'Your story') : (j.story.title_zh || '你的故事');
+  $('zhWho').textContent = j.story.story_zh.who || '';
+  $('zhFrom').textContent = j.story.story_zh.from || '';
+  $('zhTo').textContent = j.story.story_zh.to || '';
+  $('enWho').textContent = j.story.story_en.who || '';
+  $('enFrom').textContent = j.story.story_en.from || '';
+  $('enTo').textContent = j.story.story_en.to || '';
+  const poemZh = j.story.poem_zh || '', poemEn = j.story.poem_en || '';
+  $('zhPoem').textContent = poemZh;
+  $('enPoem').textContent = poemEn || poemZh;
+  $('zhPoemWrap').classList.toggle('hidden', !poemZh);
+  $('enPoemWrap').classList.toggle('hidden', !(poemEn || poemZh));
+  $('storyZh').classList.toggle('hidden', en);
+  $('storyEn').classList.toggle('hidden', !en);
+  $('btnZh').classList.toggle('on', !en);
+  $('btnEn').classList.toggle('on', en);
+}
+
+/* 梅花易数卡（随语言切换） */
+function meihuaHTML(j) {
+  const mh = j.meihua;
+  const time = mh.submit.y + '-' + mh.submit.mo + '-' + mh.submit.d + ' ' + mh.submit.h + ':' + String(mh.submit.mi).padStart(2, '0') + ':' + String(mh.submit.s).padStart(2, '0');
+  if (LANG === 'en') {
+    const ar = mh.arithmetic_en || mh.arithmetic;
+    return 'The second you pressed “Begin the reading”: <b>' + time + '</b><br>' +
+      'Upper trigram: ' + esc(ar.upper) + '<br>' +
+      'Lower trigram and moving line: ' + esc(ar.lower) + '<br>' +
+      'Original hexagram No. <b>' + mh.hexagram.num + ' · ' + esc(HEXAGRAM_NAMES_EN[mh.hexagram.num]) + '</b> (' + esc(TRIGRAM_NAMES_EN[mh.upper.num]) + ' ' + mh.upper.symbol + ' above, ' + esc(TRIGRAM_NAMES_EN[mh.lower.num]) + ' ' + mh.lower.symbol + ' below), moving line ' + mh.movingLine + ', changed hexagram No. <b>' + mh.changedHexagram.num + ' · ' + esc(HEXAGRAM_NAMES_EN[mh.changedHexagram.num]) + '</b>.<br>' +
+      '“' + esc(HEXAGRAM_NAMES_EN[mh.hexagram.num]) + '”: ' + esc(HEXAGRAM_MEANINGS_EN[mh.hexagram.num] || '') + '<br>' +
+      '“' + esc(HEXAGRAM_NAMES_EN[mh.changedHexagram.num]) + '”: ' + esc(HEXAGRAM_MEANINGS_EN[mh.changedHexagram.num] || '') + '<br>' +
+      '<small style="color:var(--muted);">' + esc(ar.note) + '</small>';
+  }
+  return '你点下“开始测算”的那一秒：<b>' + time + '</b><br>' +
+    '上卦：' + esc(mh.arithmetic.upper) + '<br>' +
+    '下卦与动爻：' + esc(mh.arithmetic.lower) + '<br>' +
+    '本卦第 <b>' + mh.hexagram.num + ' 卦 · ' + esc(mh.hexagram.name) + '</b>（' + esc(mh.upper.name) + mh.upper.symbol + '上' + esc(mh.lower.name) + mh.lower.symbol + '下），' +
+    '动爻第 ' + mh.movingLine + ' 爻，变卦第 <b>' + mh.changedHexagram.num + ' 卦 · ' + esc(mh.changedHexagram.name) + '</b>。<br>' +
+    '本卦“' + esc(mh.hexagram.name) + '”：' + esc(HEXAGRAM_MEANINGS[mh.hexagram.num] || '') + '<br>' +
+    '变卦“' + esc(mh.changedHexagram.name) + '”：' + esc(HEXAGRAM_MEANINGS[mh.changedHexagram.num] || '') + '<br>' +
+    '<small style="color:var(--muted);">' + esc(mh.arithmetic.note) + '</small>';
+}
+
+/* 审计卡（随语言切换；闰月与性别是前端排盘时记下的原始值，在此按语言拼写） */
+function auditHTML(j, form) {
+  const a = j.audit;
+  if (LANG === 'en') {
+    const ae = j.audit_en || {};
+    const items = [
+      '<b>Chart</b>: ' + esc(ae.chart || a.chart) + '. ' + (a.chartUsed ? 'Your chart was cast and sent with the request as story material.' : 'The chart engine did not load this time, so the story used only Plum Blossom Numerology and your birth details.'),
+      '<b>Randomness</b>: ' + esc(ae.random || a.random) + '. Which star was cast only decides which star’s chart tells the story; the star itself is not revealed.',
+      '<b>Your words</b>: ' + esc(ae.userWords || a.userWords) + (form.sentence ? ' — your sentence “' + esc(form.sentence) + '” appears in the story as written.' : ' — you did not write a sentence this time, so nothing is quoted.'),
+      '<b>Time</b>: ' + (a.timeKnown ? 'You gave a birth time, so the chart was cast for that hour.' : 'You did not give a birth time, so the chart was cast for the noon hour; filling it in makes it fit better.') + (a.lateZishi ? ' After 23:00 counts as the next day.' : '') + (lastGenderKnown ? '' : ' Gender not specified; the chart was cast as a female chart.'),
+      '<b>Privacy</b>: ' + esc(ae.privacy || a.privacy) + '.',
+    ];
+    if (lastLeapMonth) items.push('<b>Leap month</b>: This year has a leap ' + esc(LUNAR_MONTH_NAMES_EN[lastLeapMonth - 1]) + '; the chart was cast for the regular month.');
+    return items;
+  }
+  const items = [
+    '<b>命盘</b>：' + esc(a.chart) + '。' + (a.chartUsed ? '你的命盘已排好，随请求发给模型作故事素材。' : '本次排盘引擎未加载，只用了梅花易数与出生信息讲故事。'),
+    '<b>随机</b>：' + esc(a.random) + '。掷到哪一颗，只决定用哪一颗的命盘讲故事，具体是哪一颗不公开。',
+    '<b>你写的</b>：' + esc(a.userWords) + (form.sentence ? '——你那句“' + esc(form.sentence) + '”原样在故事里。' : '——你这次没写一句话，故事里就没有引用。'),
+    '<b>时间</b>：' + (a.timeKnown ? '你填了出生时间，按该时辰排盘。' : '你没填出生时间，暂按午时排盘；填了会更贴合。') + (a.lateZishi ? '23:00 后按次日排盘。' : '') + (a.genderNote ? esc(a.genderNote) + '。' : ''),
+    '<b>隐私</b>：' + esc(a.privacy) + '。',
+  ];
+  if (a.leapNote) items.push('<b>闰月</b>：' + esc(a.leapNote) + '。');
+  return items;
+}
 
 /* ---------- 星空与花瓣 ---------- */
 (function sparks() {
@@ -505,6 +737,8 @@ function engineChartSummary(chart, solar) {
   };
 }
 function buildUserChart(form) {
+  lastLeapMonth = 0;
+  lastGenderKnown = !!form.gender;
   if (typeof ZiweiEngine === 'undefined') return { userChart: null, note: '排盘引擎未加载', leapNote: '', timeKnown: false, lateZishi: false, genderNote: '' };
   const gender = form.gender === '男' ? 'male' : 'female';
   let solar, leapNote = '';
@@ -514,6 +748,7 @@ function buildUserChart(form) {
     if (!conv) throw new Error('农历日期无效，请重新选择。');
     solar = conv;
     const leap = leapMonthOf(ly);
+    if (leap === lm) lastLeapMonth = leap;
     if (leap === lm) leapNote = '这一年有闰' + LUNAR_MONTH_NAMES[leap - 1] + '，本次按平月排盘';
   } else {
     const parts = form.birthDate.split('-');
@@ -535,16 +770,16 @@ submitBtn.onclick = async () => {
   let birthDate = '';
   if (calendar === 'solar') {
     if (!$('solarYear').value || !$('solarMonth').value || !$('solarDay').value) {
-      statusEl.textContent = '请选阳历年月日。'; return;
+      statusEl.textContent = t('pickSolar'); return;
     }
     birthDate = $('solarYear').value + '-' + String(+$('solarMonth').value).padStart(2, '0') + '-' + String(+$('solarDay').value).padStart(2, '0');
   } else {
     if (!$('lunarYear').value || !$('lunarMonth').value || !$('lunarDay').value) {
-      statusEl.textContent = '请选农历年月日。'; return;
+      statusEl.textContent = t('pickLunar'); return;
     }
   }
   const childName = $('childName').value.trim();
-  if (mode === 'child' && !childName) { statusEl.textContent = '选了“一位子女”，请填孩子的名字。'; return; }
+  if (mode === 'child' && !childName) { statusEl.textContent = t('needChildName'); return; }
   const now = new Date();
   const form = {
     calendar: calendar,
@@ -558,11 +793,11 @@ submitBtn.onclick = async () => {
     childName: childName,
   };
   submitBtn.disabled = true;
-  statusEl.textContent = '正在排盘、起卦、讲故事……（约十几秒）';
+  statusEl.textContent = t('working');
   let charts;
   try { charts = buildUserChart(form); }
   catch (e) {
-    statusEl.textContent = e.message || '排盘出错，请检查出生日期后重试。';
+    statusEl.textContent = (e.message === '农历日期无效，请重新选择。') ? t('lunarInvalid') : t('chartError');
     submitBtn.disabled = false;
     return;
   }
@@ -587,7 +822,11 @@ submitBtn.onclick = async () => {
     });
     const j = await r.json();
     if (!r.ok) {
-      statusEl.textContent = j.message || ('出错了（' + r.status + '），请稍后再试。');
+      let msg;
+      if (j.error === 'daily_limit') msg = t('dailyLimit');
+      else if (j.error === 'model_failed') msg = t('modelFailed');
+      else msg = (LANG === 'en') ? (t('genericError') + ' (' + r.status + ')') : (j.message || ('出错了（' + r.status + '），请稍后再试。'));
+      statusEl.textContent = msg;
       if (r.status !== 429) submitBtn.disabled = false;
       return;
     }
@@ -595,7 +834,7 @@ submitBtn.onclick = async () => {
     renderResult(j, form);
     statusEl.textContent = '';
   } catch (e) {
-    statusEl.textContent = '连接失败：' + e.message + '，请检查网络后重试。';
+    statusEl.textContent = (LANG === 'en') ? ('Connection failed: ' + e.message + '. Please check your network and try again.') : ('连接失败：' + e.message + '，请检查网络后重试。');
     submitBtn.disabled = false;
   }
 };
@@ -670,65 +909,43 @@ const HEXAGRAM_MEANINGS = {
 /* ---------- 渲染结果 ---------- */
 function esc(s) { return String(s == null ? '' : s); }
 function renderResult(j, form) {
+  lastStory = j;
+  lastResultJ = j;
+  lastResultForm = form;
   $('formCard').classList.add('hidden');
   $('result').classList.remove('hidden');
-  $('storyTitle').textContent = j.story.title_zh || '你的故事';
-  $('zhWho').textContent = j.story.story_zh.who || '';
-  $('zhFrom').textContent = j.story.story_zh.from || '';
-  $('zhTo').textContent = j.story.story_zh.to || '';
-  $('enWho').textContent = j.story.story_en.who || '';
-  $('enFrom').textContent = j.story.story_en.from || '';
-  $('enTo').textContent = j.story.story_en.to || '';
-
-  const mh = j.meihua;
-  $('meihuaInfo').innerHTML =
-    '你点下“开始测算”的那一秒：<b>' + mh.submit.y + '-' + mh.submit.mo + '-' + mh.submit.d + ' ' +
-    mh.submit.h + ':' + String(mh.submit.mi).padStart(2, '0') + ':' + String(mh.submit.s).padStart(2, '0') + '</b><br>' +
-    '上卦：' + esc(mh.arithmetic.upper) + '<br>' +
-    '下卦与动爻：' + esc(mh.arithmetic.lower) + '<br>' +
-    '本卦第 <b>' + mh.hexagram.num + ' 卦 · ' + esc(mh.hexagram.name) + '</b>（' + esc(mh.upper.name) + mh.upper.symbol + '上' + esc(mh.lower.name) + mh.lower.symbol + '下），' +
-    '动爻第 ' + mh.movingLine + ' 爻，变卦第 <b>' + mh.changedHexagram.num + ' 卦 · ' + esc(mh.changedHexagram.name) + '</b>。<br>' +
-    '本卦“' + esc(mh.hexagram.name) + '”：' + esc(HEXAGRAM_MEANINGS[mh.hexagram.num] || '') + '<br>' +
-    '变卦“' + esc(mh.changedHexagram.name) + '”：' + esc(HEXAGRAM_MEANINGS[mh.changedHexagram.num] || '') + '<br>' +
-    '<small style="color:var(--muted);">' + esc(mh.arithmetic.note) + '</small>';
-
-  const a = j.audit;
-  const items = [
-    '<b>命盘</b>：' + esc(a.chart) + '。' + (a.chartUsed ? '你的命盘已排好，随请求发给模型作故事素材。' : '本次排盘引擎未加载，只用了梅花易数与出生信息讲故事。'),
-    '<b>随机</b>：' + esc(a.random) + '。掷到哪一颗，只决定用哪一颗的命盘讲故事，具体是哪一颗不公开。',
-    '<b>你写的</b>：' + esc(a.userWords) + (form.sentence ? '——你那句“' + esc(form.sentence) + '”原样在故事里。' : '——你这次没写一句话，故事里就没有引用。'),
-    '<b>时间</b>：' + (a.timeKnown ? '你填了出生时间，按该时辰排盘。' : '你没填出生时间，暂按午时排盘；填了会更贴合。') + (a.lateZishi ? '23:00 后按次日排盘。' : '') + (a.genderNote ? esc(a.genderNote) + '。' : ''),
-    '<b>隐私</b>：' + esc(a.privacy) + '。',
-  ];
-  if (a.leapNote) items.push('<b>闰月</b>：' + esc(a.leapNote) + '。');
-  $('auditList').innerHTML = items.map(i => '<li>' + i + '</li>').join('');
+  renderStoryText(j);
+  $('meihuaInfo').innerHTML = meihuaHTML(j);
+  $('auditList').innerHTML = auditHTML(j, form).map(i => '<li>' + i + '</li>').join('');
 
   setupFlower();
   $('result').scrollIntoView({ behavior: 'smooth' });
 }
 
-$('btnZh').onclick = () => {
-  $('storyZh').classList.remove('hidden'); $('storyEn').classList.add('hidden');
-  $('btnZh').classList.add('on'); $('btnEn').classList.remove('on');
-};
-$('btnEn').onclick = () => {
-  $('storyEn').classList.remove('hidden'); $('storyZh').classList.add('hidden');
-  $('btnEn').classList.add('on'); $('btnZh').classList.remove('on');
-};
+/* 语言切换：故事区与顶部两处按钮共用同一套 setLang */
+$('btnZh').onclick = () => setLang('zh');
+$('btnEn').onclick = () => setLang('en');
+$('btnZhTop').onclick = () => setLang('zh');
+$('btnEnTop').onclick = () => setLang('en');
 
 /* ---------- 送花（V1：PayPal 链接 + 自愿确认；花为随机彩色渲染版） ---------- */
 const FLOWER_PALETTES = [
-  { name: '粉', light: '#fbcfe8', deep: '#ec4899', center: '#fbbf24', dot: '#be185d' },
-  { name: '紫', light: '#ddd6fe', deep: '#8b5cf6', center: '#fbbf24', dot: '#5b21b6' },
-  { name: '金', light: '#fef3c7', deep: '#d97706', center: '#7c3aed', dot: '#92400e' },
-  { name: '蓝', light: '#bae6fd', deep: '#0284c7', center: '#fbbf24', dot: '#075985' },
-  { name: '红', light: '#fecaca', deep: '#dc2626', center: '#fbbf24', dot: '#7f1d1d' },
-  { name: '白金', light: '#ffffff', deep: '#f59e0b', center: '#b45309', dot: '#78350f' },
+  { name: '粉', en: 'pink', light: '#fbcfe8', deep: '#ec4899', center: '#fbbf24', dot: '#be185d' },
+  { name: '紫', en: 'purple', light: '#ddd6fe', deep: '#8b5cf6', center: '#fbbf24', dot: '#5b21b6' },
+  { name: '金', en: 'gold', light: '#fef3c7', deep: '#d97706', center: '#7c3aed', dot: '#92400e' },
+  { name: '蓝', en: 'blue', light: '#bae6fd', deep: '#0284c7', center: '#fbbf24', dot: '#075985' },
+  { name: '红', en: 'red', light: '#fecaca', deep: '#dc2626', center: '#fbbf24', dot: '#7f1d1d' },
+  { name: '白金', en: 'white-gold', light: '#ffffff', deep: '#f59e0b', center: '#b45309', dot: '#78350f' },
 ];
-let flowerUid = 0, lastFlowerColor = '';
+let flowerUid = 0, lastFlowerColor = '', lastFlowerColorEn = '';
+function updateFlowerColorNote() {
+  if (!lastFlowerColor) return;
+  $('flowerColorNote').textContent = LANG === 'en' ? ('A little ' + lastFlowerColorEn + ' flower.') : ('一朵' + lastFlowerColor + '色小花。');
+}
 function flowerSVG() {
   const p = FLOWER_PALETTES[Math.floor(Math.random() * FLOWER_PALETTES.length)];
   lastFlowerColor = p.name;
+  lastFlowerColorEn = p.en;
   const uid = 'fg' + (++flowerUid);
   let petals = '', inner = '';
   for (let i = 0; i < 6; i++) {
@@ -750,7 +967,7 @@ function setupFlower() {
   const returnUrl = location.origin + location.pathname + '?flower=returned&gift=' + encodeURIComponent(token);
   const pp = 'https://www.paypal.com/cgi-bin/webscr?cmd=_xclick'
     + '&business=' + encodeURIComponent('onlymanes@paypal.com')
-    + '&item_name=' + encodeURIComponent('紫微星故事 · 一朵小花')
+    + '&item_name=' + encodeURIComponent(LANG === 'en' ? 'Ziwei Star story · a little flower' : '紫微星故事 · 一朵小花')
     + '&amount=1&currency_code=CAD'
     + '&return=' + encodeURIComponent(returnUrl)
     + '&custom=' + encodeURIComponent(token);
@@ -770,7 +987,7 @@ async function recordGift(token, method) {
     });
   } catch (e) { /* 记录失败也不拦着花的呈现 */ }
   $('flowerBig').innerHTML = flowerSVG();
-  $('flowerColorNote').textContent = '一朵' + lastFlowerColor + '色小花。';
+  updateFlowerColorNote();
   $('flowerBefore').classList.add('hidden');
   $('flowerAfter').classList.remove('hidden');
   localStorage.setItem('ziwei_gifted', '1');
@@ -804,6 +1021,19 @@ async function recordGift(token, method) {
     }).catch(function () {});
   } catch (e) {}
 })();
+
+/* ---------- 访客计数（同一个 IP 只算一个；显示疑似真人去重数） ---------- */
+(function () {
+  const el = $('visitorCount');
+  if (!el) return;
+  fetch(API_BASE + '/api/visitors')
+    .then(r => r.json())
+    .then(j => { if (j && typeof j.likely_human_visitors === 'number') el.textContent = String(j.likely_human_visitors); })
+    .catch(function () { el.textContent = '–'; });
+})();
+
+/* 应用保存过的语言偏好 */
+setLang(LANG);
 </script>
 </body>
 </html>
