@@ -33,6 +33,10 @@ permalink: /blog/
       <a href="https://onlymanes.ai/pt-levels/" class="post-link">AI 量化支撑压力位</a>
       <span class="post-desc">每日更新的标的支撑位 / 压力位</span>
     </li>
+    <li class="post-item">
+      <a href="https://onlymanes.ai/ziwei.html" class="post-link">紫微星测试</a>
+      <span class="post-desc">你与紫微星的前世、今缘、与来生 · 紫微斗数紫微排盘</span>
+    </li>
   </ul>
 </div>
 
