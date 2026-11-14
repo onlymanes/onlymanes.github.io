@@ -1,7 +1,8 @@
 title: onlymanes Blog
 description: Personal blog sharing creative ideas
-baseurl: /blog
+baseurl: /
 url: https://onlymanes.ai
+permalink: /blog/:year/:month/:day/:title.html
 
 plugins:
   - jekyll-sitemap
