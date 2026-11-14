@@ -453,10 +453,8 @@ document.querySelectorAll('input[name=mode]').forEach(r => r.addEventListener('c
   $('childWrap').classList.toggle('hidden', r.value !== 'child');
 }));
 document.querySelector('#modes .mode').classList.add('sel');
-if (localStorage.getItem('ziwei_last_day') === new Date().toISOString().slice(0, 10)) {
-  statusEl.textContent = '你今天已经测过一次啦，明天再来。';
-  submitBtn.disabled = true;
-}
+/* 每日 1 次由后端 /api/ziwei 强制（白名单可绕过）；前端不再凭 localStorage 硬锁按钮，
+   否则白名单用户测过一次后当天无法再测（2026-11-14 Helen 实测触发）。后端 429 会回同一句话。 */
 
 /* ---------- 排盘（Renhuai123/ziwei-doushu 引擎） ---------- */
 /* 时钟时间 → 时辰支：沿用引擎口径（晚子时 23:00 后按次日排盘；不填暂按午时）。 */
