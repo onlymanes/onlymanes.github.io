@@ -59,21 +59,23 @@ function setLang(l){
 </ul>
 <p class="zh">我们不收集姓名、身份证号、电话号码、地址、账号密码，也不收集精确位置。</p>
 <p class="en">We do not collect your real name, ID number, phone number, address, account passwords, or precise location.</p>
+<p class="zh">每次打开页面时，还会记录一次访问：IP 地址的 SHA-256 哈希（不存明文）、浏览器信息、访问路径、来源页面、语言、时区、屏幕尺寸、是否触屏，用于访客计数和每日 1 次的测算限制。</p>
+<p class="en">Each time you open the page, we also record one visit: a SHA-256 hash of your IP address (not the plaintext IP), browser information, the page path, referrer, language, timezone, screen size, and whether the device is touch-capable — used for visitor counting and the once-per-day test limit.</p>
 
 <h2 class="zh">二、用来做什么</h2>
 <h2 class="en">2. How We Use It</h2>
-<p class="zh">以上信息仅用于生成这一次的故事。我们不做用户画像，不追踪你的浏览行为，不把你的信息用于广告或任何其他用途。</p>
-<p class="en">This information is used only to generate this one story. We do not build user profiles, we do not track your browsing, and we do not use your information for advertising or any other purpose.</p>
+<p class="zh">以上信息仅用于生成这一次的故事。我们不做用户画像、不跨站追踪、不投广告。但会按 IP 哈希计数访客、执行每日 1 次的测算限制。</p>
+<p class="en">This information is used only to generate this one story. We do not build user profiles, do not track you across sites, and do not serve ads. We do count visitors by IP hash and enforce the once-per-day test limit.</p>
 
 <h2 class="zh">三、保留多久</h2>
 <h2 class="en">3. How Long We Keep It</h2>
-<p class="zh">会话结束即删除。我们不保存、不落库你的出生信息；故事生成后，相关输入不会留在服务器上。</p>
-<p class="en">It is deleted when the session ends. We do not save or store your birth information; once the story is generated, your input does not remain on our servers.</p>
+<p class="zh">出生信息会话结束即删除、不落库；故事生成后，相关输入不会留在服务器上。每日限测的记录最多保留 48 小时；访客统计以日聚合形式保存，代码中没有设置过期时间。</p>
+<p class="en">Birth information is deleted when the session ends and is not stored; once the story is generated, your input does not remain on our servers. The daily-limit record is kept for at most 48 hours; visitor statistics are kept as daily aggregates with no expiry set in code.</p>
 
 <h2 class="zh">四、数据在哪里处理</h2>
 <h2 class="en">4. Where Data Is Processed</h2>
-<p class="zh">你的输入经 Cloudflare Worker 处理，节点位于美国 / 加拿大。我们不向第三方出售或共享个人信息。</p>
-<p class="en">Your input is processed through a Cloudflare Worker, with nodes in the United States / Canada. We do not sell or share personal information with any third party.</p>
+<p class="zh">你的输入经 Cloudflare Worker 处理（节点位于美国 / 加拿大），并发送给 Google Gemini，只为生成这一次的故事。我们不向任何第三方出售个人信息。</p>
+<p class="en">Your input is processed through a Cloudflare Worker (nodes in the United States / Canada) and sent to Google Gemini only to generate this one story. We do not sell personal information to any third party.</p>
 
 <h2 class="zh">五、未成年人</h2>
 <h2 class="en">5. Minors</h2>
