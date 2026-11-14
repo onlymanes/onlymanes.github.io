@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="spiritGrad" gradientUnits="userSpaceOnUse" x1="77" y1="323" x2="319" y2="81">
+      <stop offset="0%" stop-color="#7b2ff7"/>
+      <stop offset="25%" stop-color="#2f6df7"/>
+      <stop offset="50%" stop-color="#1fbf8f"/>
+      <stop offset="75%" stop-color="#e8c96a"/>
+      <stop offset="100%" stop-color="#e85d3d"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke="url(#spiritGrad)" stroke-linecap="round">
+    <circle cx="200" cy="200" r="173.333" stroke-width="16"/>
+    <circle cx="138.7" cy="261.3" r="86.667" stroke-width="13"/>
+    <circle cx="261.3" cy="138.7" r="86.667" stroke-width="13"/>
+    <line x1="77.4" y1="322.6" x2="319.3" y2="80.7" stroke-width="13"/>
+    <line x1="292.6" y1="80.7" x2="319.3" y2="80.7" stroke-width="13"/>
+    <line x1="319.3" y1="107.4" x2="319.3" y2="80.7" stroke-width="13"/>
+  </g>
+</svg>
