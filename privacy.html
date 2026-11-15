@@ -74,8 +74,8 @@ function setLang(l){
 
 <h2 class="zh">四、数据在哪里处理</h2>
 <h2 class="en">4. Where Data Is Processed</h2>
-<p class="zh">你的输入经 Cloudflare Worker 处理（节点位于美国 / 加拿大），并发送给 Google Gemini，只为生成这一次的故事。我们不向任何第三方出售个人信息。</p>
-<p class="en">Your input is processed through a Cloudflare Worker (nodes in the United States / Canada) and sent to Google Gemini only to generate this one story. We do not sell personal information to any third party.</p>
+<p class="zh">你的输入经 Cloudflare Worker 处理（节点位于美国 / 加拿大），发送给 Google Gemini 生成这一次的故事；若 Gemini 当时不可用或被限流，会改发给 DeepSeek（备用模型）生成，同样只为这一次的故事。我们不向任何第三方出售个人信息。</p>
+<p class="en">Your input is processed through a Cloudflare Worker (nodes in the United States / Canada) and sent to Google Gemini to generate this one story. If Gemini is unavailable or rate-limited at that moment, it is instead sent to DeepSeek (the fallback model) to generate the story, again only for this one story. We do not sell personal information to any third party.</p>
 
 <h2 class="zh">五、未成年人</h2>
 <h2 class="en">5. Minors</h2>
@@ -88,8 +88,8 @@ function setLang(l){
 <p class="en">If you would like information deleted, or have any questions about this policy, please email <a href="mailto:onlymanes@gmail.com">onlymanes@gmail.com</a> and we will reply as soon as possible.</p>
 
 <footer>
-<p class="zh">运营主体：onlymanes · 联系邮箱：onlymanes@gmail.com · 最后更新：2026-11-14</p>
-<p class="en">Operator: onlymanes · Contact: onlymanes@gmail.com · Last updated: 2026-11-14</p>
+<p class="zh">运营主体：onlymanes · 联系邮箱：onlymanes@gmail.com · 最后更新：2026-11-15</p>
+<p class="en">Operator: onlymanes · Contact: onlymanes@gmail.com · Last updated: 2026-11-15</p>
 <p><a href="/">← onlymanes.ai</a> · <a href="/terms.html" class="zh">服务条款</a><a href="/terms.html" class="en">Terms of Service</a></p>
 </footer>
 </main>
