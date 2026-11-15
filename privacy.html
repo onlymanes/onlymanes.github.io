@@ -69,8 +69,8 @@ function setLang(l){
 
 <h2 class="zh">三、保留多久</h2>
 <h2 class="en">3. How Long We Keep It</h2>
-<p class="zh">出生信息会话结束即删除、不落库；故事生成后，相关输入不会留在服务器上。每日限测的记录最多保留 48 小时；访客统计以日聚合形式保存，代码中没有设置过期时间。</p>
-<p class="en">Birth information is deleted when the session ends and is not stored; once the story is generated, your input does not remain on our servers. The daily-limit record is kept for at most 48 hours; visitor statistics are kept as daily aggregates with no expiry set in code.</p>
+<p class="zh">出生信息会话结束即删除、不落库；故事生成后，相关输入不会留在服务器上。每日限测的记录最多保留 48 小时；访客统计按日聚合保存，仅含去重计数所需的 IP 哈希与访问特征，不含姓名、邮箱等可直接识别个人的信息，每日记录保留 12 个月，到期自动删除。</p>
+<p class="en">Birth information is deleted when the session ends and is not stored; once the story is generated, your input does not remain on our servers. The daily-limit record is kept for at most 48 hours; visitor statistics are kept as daily aggregates containing only the IP hash and visit features needed for de-duplicated counting — no name, email, or other directly identifying information — and each day's record is kept for 12 months, then deleted automatically.</p>
 
 <h2 class="zh">四、数据在哪里处理</h2>
 <h2 class="en">4. Where Data Is Processed</h2>
