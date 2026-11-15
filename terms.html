@@ -13,13 +13,13 @@
   .lang-btns { margin:16px 0; }
   .lang-btns button { background:#2a2340; color:#f2ead9; border:1px solid #f5c542; border-radius:6px; padding:6px 14px; margin-right:8px; cursor:pointer; font-size:1em; }
   .lang-btns button.active { background:#f5c542; color:#14101d; }
-  .en { display:none; }
+  html:not(.show-en) .en { display:none; }
+  html.show-en .zh { display:none; }
   footer { margin-top:3em; color:#b9b0c9; font-size:0.9em; }
 </style>
 <script>
 function setLang(l){
-  document.querySelectorAll('.zh').forEach(e=>e.style.display = l==='zh' ? '' : 'none');
-  document.querySelectorAll('.en').forEach(e=>e.style.display = l==='en' ? '' : 'none');
+  document.documentElement.classList.toggle('show-en', l==='en');
   document.querySelectorAll('.lang-btns button').forEach(b=>b.classList.toggle('active', b.dataset.lang===l));
 }
 </script>
