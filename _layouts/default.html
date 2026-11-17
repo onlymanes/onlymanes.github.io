@@ -119,9 +119,12 @@
         .is-post .text-section video {
             max-width: 100%; border-radius: 12px; display: block; margin: 1.2rem auto;
         }
-        /* 音频:限宽播放条 */
+        /* 音频:限宽播放条(手机上不溢出、完整显示播放按钮) */
         .is-post .text-section audio {
-            width: 100%; max-width: 420px; display: block; margin: 1.2rem 0;
+            width: 100%; max-width: 420px; min-width: 0; display: block; margin: 1.2rem 0;
+        }
+        @media (max-width: 480px) {
+            .is-post .text-section audio { max-width: 100%; }
         }
         /* 灯箱:点击图片全屏查看 */
         .lightbox {
