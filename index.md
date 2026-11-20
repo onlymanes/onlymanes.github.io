@@ -37,6 +37,10 @@ permalink: /blog/
       <a href="https://ziwei.onlymanes.ai/" class="post-link">紫微星测试</a>
       <span class="post-desc">你与紫微星的前世、今缘、与来生 · 紫微斗数紫微排盘</span>
     </li>
+    <li class="post-item">
+      <a href="https://yusheng.onlymanes.ai/" class="post-link">张雨生答案之书</a>
+      <span class="post-desc">写下你的问题，掷骰子，听宝哥用他自己的歌词回答你</span>
+    </li>
   </ul>
 </div>
 
