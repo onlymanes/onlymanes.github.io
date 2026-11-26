@@ -13,6 +13,10 @@ exclude:
   - Gemfile.lock
   - vendor
 
+# 让 Jekyll 把 _redirects 原样拷到输出目录（_redirects 以 _ 开头，默认会被排除）
+include:
+  - _redirects
+
 defaults:
   - scope:
       path: ""

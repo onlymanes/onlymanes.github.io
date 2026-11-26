@@ -1,0 +1,8 @@
+# 旧地址（迁移前 GitHub Pages 的 /YYYY/MM/DD/ 形式）301 跳转到新地址 /blog/YYYY/MM/DD/
+# 配合删除旧的跳转 stub 页面使用。Cloudflare Pages 的 _redirects 规则。
+/2011/* /blog/2011/:splat 301
+/2012/* /blog/2012/:splat 301
+/2013/* /blog/2013/:splat 301
+/2017/* /blog/2017/:splat 301
+/2025/* /blog/2025/:splat 301
+/2026/* /blog/2026/:splat 301
